@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3D相册</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		html,body{
+			width: 100%;
+			height: 100%;
+			background: #000;
+			overflow: hidden;
+		}
+		.container{
+			position: relative;
+			margin: 5% auto;
+			width:100px;
+			height: 300px;
+			transform: perspective(800px) rotateX(-10deg) rotateY(0deg);
+			transform-style: preserve-3d;
+		}
+		.container div{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 150px;
+			height: 200px;
+			transition: transform 2s,background 5s;
+			box-shadow: 0 0 5px 3px #fff;
+		}
+		.container div img{
+			width: 100%;
+			height: 100%;
+		}
+		.container .box1{
+			background: red;
+		}
+		.container .box2{
+			background: blue;		
+		}
+		.container .box3{
+			background: green;			
+		}
+		.container .box4{
+			background: #248588;		
+		}
+		.container .box5{
+			background: purple;		
+		}
+		.container .box6{
+			background: pink;		
+		}
+		.container .box7{
+			background: yellow;		
+		}
+		.container .box8{
+			background: #BE7932;
+		}
+		.container .last{
+			top: -10%;
+			left: -350%;
+			width: 950px;
+			height: 600px;
+			border-radius: 50%;
+			transform: rotateX(90deg) translate(-45px);
+		}											
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="box1">
+			<img src="image/1.jpg">
+		</div>
+		<div class="box2">
+			<img src="image/2.jpg">
+		</div>
+		<div class="box3">
+			<img src="image/3.jpg">
+		</div>
+		<div class="box4">
+			<img src="image/4.jpg">
+		</div>
+		<div class="box5">
+			<img src="image/5.jpg">
+		</div>
+		<div class="box6">
+			<img src="image/6.jpg">
+		</div>
+		<div class="box7">
+			<img src="image/7.jpg">
+		</div>
+		<div class="box8">
+			<img src="image/8.jpg">
+		</div>
+		<div class="last">
+			
+		</div>
+	</div>
+	<script>
+		var aBox = document.getElementsByTagName('div'),
+			b = 45,
+			arr = [],
+			xuanzhuan = function(i,d){
+				this.i = i;
+				this.d = d;
+				this.start = function(){
+					var ii = this.i,
+						dd = this.d;
+					aBox[ii].style.transform = 'rotateY('+dd+'deg)'+'translateZ(400px)';
+					console.log(ii,dd);
+				}
+			}
+		for (var i = 1; i < aBox.length-1; i++) {
+			var a = new xuanzhuan(i,(i*45));
+			a.start();
+			arr.push(a);
+		}
+		setInterval(function(){
+			for (var i = 0; i < arr.length; i++) {
+				arr[i].d += 45;
+				arr[i].start();
+			}
+		},1000);
+		setInterval(function(){
+			aBox[aBox.length-1].style.background = 'rgba('+Math.round(Math.random()*256)+','+Math.round(Math.random()*256)+','+Math.round(Math.random()*256)+',0.5)';
+		},3000);
+	</script>
+</body>
+</html>

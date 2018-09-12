@@ -1,0 +1,28 @@
+.ai-message .inner-box,.ai-message .content-list .content-item{
+    height:80vh;
+}
+
+.what-is-ai .inner-box .content-list{
+    height:calc(80vh * 3); /* 3个 */
+}
+
+.future-ai .inner-box .content-list{
+    height:calc(80vh * 5); /* 5个 */
+}
+
+.area .inner-box,.area .inner-box .content-item-wrap{
+    width:80vw;
+}
+.area .inner-box .content-list{
+    width:calc(80vw * 3);
+}
+
+@media screen and (max-width: 460px) {
+
+    .area .inner-box,.area .inner-box .content-item-wrap{
+        width:95vw;
+    }
+    .area .inner-box .content-list{
+        width:calc(95vw * 3);
+    }
+}

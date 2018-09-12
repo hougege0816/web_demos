@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>贪吃蛇</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width:100%;
+            height:100%;
+            background:#333;
+            overflow: hidden;
+        }
+        canvas{
+            display: block;
+            margin: 5% auto;
+            background:#eee;
+            border:1px solid #000;
+        }
+        div{
+            position: absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        span{
+            color: #fff;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="head">
+    <span>0</span>
+</div>
+<canvas id="canvas"></canvas>
+<script>
+    window.addEventListener('load',function(){
+        let can = document.getElementById('canvas'),
+            cxt = can.getContext('2d');
+        can.width = 825;
+        can.height = 525;
+
+        let game = new Game();
+        game.start();
+
+        document.addEventListener('keydown',function(e){
+            let key = e.keyCode-37;
+            if (key>=0) game.setDirection(key);
+        });
+
+        function Game(){
+            let len = 5,source = 0,
+                direction = 2,
+                currDirection = 2,
+                size = 15,
+                snakeX = -size,snakeY = size,
+                foodX = ~~(Math.random()*can.width/15)*15,foodY = ~~(Math.random()*can.height/15)*15,
+                snakes = [],
+                snakePositions = [],
+                color = 'rgba('+~~(Math.random()*256)+','+~~(Math.random()*256)+','+~~(Math.random()*256)+',1)';
+            this.SnakeOrgan = function(x,y){
+                this.x = x;
+                this.y = y;
+                this.color = color;
+                this.draw = function(){
+                    cxt.beginPath();
+                    cxt.fillStyle = this.color;
+                    cxt.fillRect(this.x,this.y,size,size);
+                }
+            };
+            this.isDirection = function(){
+                if (direction===0 && currDirection!== 2){
+                    snakeX -= size;
+                }
+                if (direction===0 && currDirection=== 2){
+                    direction = currDirection;
+                }
+                if (direction===2 && currDirection!== 0){
+                    snakeX += size;
+                }
+                if (direction===2 && currDirection=== 0){
+                    direction = currDirection;
+                }
+                if (direction===1 && currDirection!== 3){
+                    snakeY -= size;
+                }
+                if (direction===1 && currDirection=== 3){
+                    direction = currDirection;
+                }
+                if (direction===3 && currDirection!== 1){
+                    snakeY += size;
+                }
+                if (direction===3 && currDirection=== 1){
+                    direction = currDirection;
+                }
+            };
+            this.lnitialSnake = (()=>{
+                for (let i=0;i<len;i++){
+                    this.isDirection();
+                    snakes.push(new this.SnakeOrgan(snakeX,snakeY));
+                    snakePositions.push({x:snakeX,y:snakeY});
+                    snakes[i].draw();
+                }
+            })();
+            this.snakeMove = ()=>{
+                this.isDirection();
+                snakes.push(new this.SnakeOrgan(snakeX,snakeY));
+                snakePositions.push({x:snakeX,y:snakeY});
+                if (!this.isEat()) {
+                    snakes.splice(0,1);
+                    snakePositions.splice(0,1);
+                }
+                snakes.forEach(el=>{
+                    el.color = color;
+                    snakes[snakes.length-1].color = '#000';
+                    el.draw();
+                });
+            };
+            this.food = ()=>{
+                cxt.beginPath();
+                cxt.fillStyle = 'blue';
+                cxt.fillRect(foodX,foodY,15,15);
+            };
+            this.isEnd = function(){
+                let _isStart = false;
+                if (snakeX<0 || snakeX>can.width-size || snakeY<0 || snakeY>can.height-size){
+                    _isStart =  true;
+                }
+                snakePositions.forEach((el,index,arr)=>{
+                    if (index<arr.length-1){
+                        if (el.x === snakeX && el.y === snakeY){
+                            _isStart = true;
+                        }
+                    }
+                });
+                return _isStart;
+            };
+            this.isEat = ()=>{
+                if (snakeX===foodX && snakeY===foodY){
+                    foodX = ~~(Math.random()*can.width/15)*15;
+                    foodY = ~~(Math.random()*can.height/15)*15;
+                    source++;
+                    document.getElementsByTagName('span')[0].innerHTML = source;
+                    this.food();
+                    return true;
+                }
+            };
+            this.start = ()=>{
+                cxt.clearRect(0,0,can.width,can.height);
+                let time = setInterval(()=>{
+                    cxt.clearRect(0,0,can.width,can.height);
+                    this.snakeMove();
+                    if (this.isEnd()){
+                        game = new Game();
+                        game.start();
+                        clearInterval(time);
+                        alert('Game over!');
+                    }
+                    this.food();
+                    this.isEat();
+                },200);
+            };
+            return {
+                start : this.start,
+                setDirection : (dir)=>{
+                    if (dir!==undefined) {
+                        currDirection = direction;
+                        direction = dir;
+                    }
+                }
+            }
+
+        }
+    });
+</script>
+</body>
+</html>

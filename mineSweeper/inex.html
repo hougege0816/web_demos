@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>扫雷</title>
+    <link rel="stylesheet" href="js/style.css">
+</head>
+<body>
+    <div class="options" id="options">
+        <h2>难度</h2>
+        <form id='difficulty'>
+            <label><input type="radio" name="difficulty" value="0" checked><strong>初级</strong>（10个雷，9*9平铺网格）</label>
+            <label><input type="radio" name="difficulty" value="1"><strong>中级</strong>（40个雷，16*16平铺网格）</label>
+            <label><input type="radio" name="difficulty" value="2"><strong>高级</strong>（99个雷，16*30平铺网格）</label>
+            <label><input type="radio" name="difficulty" value="3"><strong>自定义</strong>
+                <span>宽度：</span><input class="custom" type="number" value="20" max="40" min="9">
+                <span>高度：</span><input class="custom" type="number" value="20" max="20" min="9">
+                <span>雷数：</span><input class="custom" type="number" value="20" max="300" min="10">
+            </label>
+            <input type="button" id="startBtn" value="开始游戏">
+        </form>
+    </div>
+    <div class="container" id="container">
+        <div class="btn-group">
+            <button id="restart">重新开始</button>
+        </div>
+        <div class="header">
+            <p>时间：<span id="time">0</span></p>
+            <p>雷数：<span id="mineCount">0</span></p>
+        </div>
+        <div class="content" id="content">
+            <div class="box">
+                <div class="pop"><span>失败</span></div>
+                <table border="1" cellspacing="0" cellpadding="0">
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script-pub.js"></script>
+</body>
+</html>

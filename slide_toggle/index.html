@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>幻灯片切换</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			-o-user-select: none;
+			user-select: none;
+		}
+		html,body{
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+		}
+		.container{
+			width: 100%;
+			height: 90%;
+		}
+		.container .pic{
+			position: relative;
+			width: 500%;
+			height: 100%;
+		}
+		.container .pic div{
+			float: left;
+			width: 20%;
+			height: 100%;
+			font-size: 180px;
+			line-height: 3;
+			text-align: center;
+			color: #fff;
+			transition: transform 0.5s,border-radius 0.5s;
+		}
+		.container .pic .box1{
+			background: #f1c40f;
+		}
+		.container .pic .box2{
+			background: #2ecc71;
+		}
+		.container .pic .box3{
+			background: #3498db;
+		}
+		.container .pic .box4{
+			background: #9b50ba;
+		}
+		.container .pic .box5{
+			background:#DA3653;
+		}
+		.container .count{
+			position: fixed;
+			bottom: 11%;
+			height: 2em;
+		}
+		.container .count ul{
+			width: 100%;
+			height: 100%;
+		}
+		.container .count li{
+			list-style-type: none;
+			float: left;
+			width: 1em;
+			height: 1em;
+			background: rgba(0,0,0,0);
+			border: 1px solid #fff;
+			border-radius: 50%;
+			cursor: pointer;
+			transition: background 0.5s;
+		}
+		.container .count li:nth-child(5){
+			margin-right: 0;
+		}
+		.container .count li.first{
+			background: #fff;
+		}
+		@media screen and (min-width: 1000px){
+			.container .count{
+				left: 40%;
+				width: 30%;
+			}
+			.container .count li{
+				margin: 3% 10% 0 0;
+			}			
+		}
+		@media screen and (max-width: 1000px) and (min-width: 650px){
+			.container .count{
+				left: 35%;
+				width: 40%;
+			}			
+			.container .count li{
+				margin: 3% 10% 0 0;
+			}			
+		}
+		@media screen and (max-width: 650px){
+			.container .count{
+				left: 30%;
+				width: 50%;
+			}
+			.container .count li{
+				margin: 3% 8% 0 0;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="pic">
+			<div class="box1">1</div>
+			<div class="box2">2</div>
+			<div class="box3">3</div>
+			<div class="box4">4</div>
+			<div class="box5">5</div>
+		</div>
+		<div class="count">
+			<ul>
+				<li class="first"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</div>
+	<script>
+		var get = {
+			byId : function(id){
+				return document.getElementById(id)
+			},
+			byClass : function(sClass,parent){
+				var aClass = [],
+					reClass = new RegExp('(^|)'+sClass+'(|$)'),
+					aElem = get.byTagName('*',(parent || document));
+				for (var i = 0; i < aElem.length; i++) reClass.test(aElem[i].className) && aClass.push(aElem[i]);
+				return aClass	
+			},
+			byTagName : function(elem,obj){
+				return (obj || document).getElementsByTagName(elem)
+			}
+		};
+		var Event = {
+			addEvent : function(elem,sEvent,fn){
+				elem.addEventListener?elem.addEventListener(sEvent,fn,false):elem.attachEvent('on'+sEvent,fn)
+			},
+			removeEvent : function(elem,sEvent,fn){
+				elem.removeEventListener?elem.removeEventListener(sEvent.fn,false):elem.detachEvent('on'+sEvent,fn)
+			}
+		};
+		var slide = {
+			clickMove : function(container,box,count,index){
+				for (var i = 0; i < count.length; i++) count[i].className = '';
+				count[index].className = 'first';
+				container.style.transition = 'margin 0.5s';
+				for (var i = 0; i < box.length; i++) {
+					box[i].style.transform = 'scale(0.8)';
+					 box[i].style.borderRadius = '150px';
+				}
+				setTimeout(function(){
+					container.style.marginLeft = -(index*box[0].offsetWidth) + 'px';
+				},500);
+				setTimeout(function(){
+					for (var i = 0; i < box.length; i++) {
+						box[i].style.transform = 'scale(1)';
+						box[i].style.borderRadius = '0';
+					}
+				},1000);
+			},
+			pullMove : function(container,box,count,dx,zx,d,start){
+				if (start) {
+					container.style.transition = 'none';
+					(d < box.length-1 && dx < zx ) && (container.style.marginLeft = -((d*box[0].offsetWidth)+(zx-dx))+'px');
+					(d > 0 && dx > zx) && ( container.style.marginLeft = -(d*box[0].offsetWidth)+(dx-zx)+'px' );
+				}
+				else{
+					container.style.transition = 'margin 0.5s';
+					if ( dx < zx && d < box.length-1 ) {
+						 (  ((zx-dx) > box[0].offsetWidth/5 ) ? container.style.marginLeft = -((d+1)*box[0].offsetWidth) + 'px' : container.style.marginLeft = -(d*box[0].offsetWidth)+'px');
+						 if (d < box.length-1) {
+						 	for (var i = 0; i < count.length; i++) count[i].className = '';
+						 	count[d+1].className = 'first';
+						 }
+						 		
+					}
+					if (dx > zx && d > 0) {
+						( ( (dx-zx)>box[0].offsetWidth/5) ? container.style.marginLeft = -((d-1)*box[0].offsetWidth)+'px' : container.style.marginLeft = -((d)*box[0].offsetWidth)+'px');
+						if (d > 0) {
+						 	for (var i = 0; i < count.length; i++) count[i].className = '';
+						 	count[d-1].className = 'first';							
+						}
+					} 
+
+				}
+			}
+		}
+		window.onload = function(){
+			var aPic = get.byClass('pic')[0],
+				aBox = get.byClass('box',aPic),
+				aCount = get.byTagName('li'),
+				dx = zx = 0,
+				d = 0,
+				iStart = false,
+				order = true;
+			for (var i = 0; i < aCount.length; i++) {
+					aCount[i].index = i;
+					aBox[i].index = i;
+					Event.addEvent(aCount[i],'click',function(event){
+						slide.clickMove(aPic,aBox,aCount,event.target.index);
+					});
+					Event.addEvent(aBox[i],'mousedown',function(event){
+						zx = event.clientX;
+						iStart = true;
+						d = event.target.index;
+						Event.addEvent(event.target,'mousemove',function(event){
+							if (!iStart) return;
+							dx = event.clientX;
+							slide.pullMove(aPic,aBox,aCount,dx,zx,d,iStart);
+						})
+					});
+					Event.addEvent(aBox[i],'mouseup',function(event){
+						iStart = false;
+						slide.pullMove(aPic,aBox,aCount,dx,zx,d,iStart);
+					});
+			}
+			// 自动切换
+			// setInterval(function(){
+			// 	order ? ( d++ && (d==aBox.length) && (d-=2,order=false) ) : (d-- && (d ==0) && (order=true));
+			// 	slide.clickMove(aPic,aBox,aCount,d);
+			// },3000);
+		}
+	</script>
+</body>
+</html>

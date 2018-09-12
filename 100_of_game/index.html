@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>是男人就过100关</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+        html,body{
+            width:100%;
+            height:100%;
+            overflow: hidden;
+        }
+        .container{
+            position: relative;
+            width:100%;
+            height:100%;
+            background:#DCD85A;
+        }
+        .header{
+            position: absolute;
+            top:5%;
+            left:0;
+            width:100%;
+            height:6%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background:rgba(0,0,0,0.4);
+            border-radius: 20px;
+            color: #fff;
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .pop{
+            position: absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background:rgba(0,0,0,0.6);
+            z-index:99;
+            text-align: center;
+            color: #fff;
+            visibility: hidden;
+        }
+        .pop  h2{
+            margin-top:30vh;
+            line-height:3;
+        }
+        .pop p{
+            line-height:3;
+        }
+        .pop input{
+            margin-top:10%;
+            width:30%;
+            height:7%;
+            background: rgba(22, 98, 255, 1);
+            border-radius: 5px;
+            color: #fff;
+            border:0;
+            cursor: pointer;
+            outline:none;
+        }
+        .wrap{
+            position: absolute;
+            bottom:0;
+            left:0;
+            width:10000%;
+            height:30vh;
+        }
+        .move{
+            transition: left .8s;
+        }
+        .wrap > div{
+            float: left;
+            height:100%;
+            background: #000;
+        }
+        .bridge{
+            position: absolute;
+            bottom:29.5%;
+            left:30vw;
+            width:0;
+            height:0.5vh;
+            background:#000;
+            transform-origin: 0 0 0;
+            transform: rotate(-90deg);
+            transition: transform .5s;
+            border-radius: 5px;
+        }
+        img{
+            position: absolute;
+            bottom: 30vh;
+            left:20vw;
+            width:5%;
+            transition:all .8s;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">0</div>
+    <div class="pop">
+        <h2>游戏结束</h2>
+        <p>分数：<span>0</span></p>
+        <input class="reStart" type="button" value="重新开始">
+    </div>
+    <div class="wrap"></div>
+    <div class="bridge"></div>
+    <img class="character" src="image/stick_stand.png">
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>

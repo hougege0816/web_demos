@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Canvas太阳系动画</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		html,body{
+			width: 100%;
+			height: 100%;
+		}
+		canvas{
+			display: block;
+			margin: 0 auto;
+			background: #000;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="650" height="650"></canvas>
+	<script>
+		var SolarSystem = {
+			track : function(cxt,x,y,r){
+				for (var i = 0; i < 8; i++) {
+					cxt.strokeStyle = '#fff';
+					cxt.beginPath();
+					cxt.arc(x,y,(i+1)*r,0,Math.PI*2,false);
+					cxt.stroke();
+				}
+			},
+			star : function(cxt,x,y,r,c,eColor,sColor,time){
+				this.x = x;
+				this.y = y;
+				this.r = r;
+				this.c = c;
+				this.eColor = eColor;
+				this.sColor = sColor;
+				this.time = time;
+				this.draw = function(){
+					cxt.save();
+					cxt.translate(325,325);
+					cxt.rotate(this.time*Math.PI*(360/this.c)/180);
+					cxt.beginPath();
+					cxt.arc(this.x,this.y,this.r,0,Math.PI*2,false);
+					var color = cxt.createRadialGradient(this.x,this.y,0,this.x,this.y,this.r);
+					color.addColorStop(0,this.eColor);
+					color.addColorStop(1,this.sColor);
+					cxt.fillStyle = color;
+					cxt.fill();
+					cxt.restore();
+					this.time += 1;
+				}
+			},
+			move : function(cxt,stars){
+				cxt.clearRect(0,0,650,650);
+				SolarSystem.track(cxt,325,325,38);
+				for (var i = 0; i < stars.length; i++) {
+					stars[i].draw();
+				}
+			}
+		}
+		var can = document.getElementById('canvas'),
+		cxt = can.getContext('2d');
+		SolarSystem.track(cxt,325,325,38);
+		//绘制太阳
+		var sun = new SolarSystem.star(cxt,0,0,12,0,'red','yellow');
+		sun.draw();
+		//绘制各种星球
+		var star1 = new SolarSystem.star(cxt,38,0,10,87,'#a69697','#5c3740',1);
+		var star2 = new SolarSystem.star(cxt,76,0,10,226,'#c4bbac','#1f1315',1);
+		var star3 = new SolarSystem.star(cxt,114,0,10,365,'#78b7eb','#050c12',1);
+		var star4 = new SolarSystem.star(cxt,152,0,10,1888,'#cec9b6','#76422d',1);
+		var star5 = new SolarSystem.star(cxt,190,0,10,2888,'#c0a48e','#322222',1);
+		var star6 = new SolarSystem.star(cxt,228,0,10,4888,'#f7f953','#5c4533',1);
+		var star7 = new SolarSystem.star(cxt,266,0,10,8888,'#a7c1e5','#19243a',1);
+		var star8 = new SolarSystem.star(cxt,304,0,10,10888,'#0661b2','#1e3b73',1);
+		var stars = [sun,star1,star2,star3,star4,star5,star6,star7,star8];
+		setInterval(function(){
+			SolarSystem.move(cxt,stars);
+		},30);	
+	</script>
+</body>
+</html>

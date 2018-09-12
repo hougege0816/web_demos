@@ -1,0 +1,158 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    width:100%;
+    height:100%;
+    background:#ccc;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+}
+.options{
+    padding: 15px;
+    width:40%;
+    height:auto;
+    border:1px solid rgba(0,0,0,.2);
+}
+.options h2{
+    margin-bottom:5%;
+    font-size: 20px;
+}
+.options form{
+    width:100%;
+    height:100%;
+}
+.options label{
+    display: block;
+    line-height:2;
+}
+.options label input[type=radio]{
+    margin:0 5px;
+}
+.options span{
+    margin-left:5%;
+    font-size: 15px;
+}
+.options input[type=number]{
+    width:40px;
+    height:20px;
+    text-align: center;
+    ime-mode: disabled;
+}
+.options input[type=button]{
+    margin:5%;
+    width:80px;
+    height:30px;
+    cursor: pointer;
+}
+
+
+
+.container{
+    position: relative;
+    width:100%;
+    height:100%;
+    display: none;
+}
+.container .btn-group{
+    position: absolute;
+    top:0;
+    left:0;
+    padding: 5px;
+    width:auto;
+    height:auto;
+}
+.container #restart{
+    width:80px;
+    height:30px;
+    cursor: pointer;
+}
+.container .header{
+    margin: 0 auto;
+    width:40%;
+    height:6%;
+    display: flex;
+    align-items:center;
+    justify-content:space-around;
+}
+.container .pop{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:0;
+    background:rgba(0,0,0,.3);
+    z-index:100;
+    color: #333;
+    font-size:30px;
+}
+.container .pop.display{
+    height:100%;
+}
+.container .pop span{
+    margin-top:-50px;
+    display: block;
+    text-align: center;
+    transition: .5s;
+    opacity:0;
+}
+.container .pop span.display{
+    opacity:1;
+}
+.container .content{
+    width:100%;
+    height:94%;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+}
+.container .box{
+    position: relative;
+}
+.container table td{
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background: #4271ff;
+    transition: background .2s;
+    font-size:15px;
+}
+.container table td.open{
+    background:transparent;
+}
+.container table td.try-open{
+    background:transparent;
+}
+.container table td.sign::after{
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    background:url('../images/flag.png') no-repeat  center center;
+    background-size: 18px;
+    color: #000000;
+}
+.container table td.mine{
+    color: red;
+    font-weight: bold;
+    background:transparent;
+}
+.container table td.at-open{
+    background:transparent;
+}
+
+.container table td img{
+    width:15px;
+    height:15px;
+}

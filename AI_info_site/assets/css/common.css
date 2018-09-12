@@ -1,0 +1,119 @@
+/* reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.5s ease;
+}
+
+@font-face {
+    font-family: AliHYAiHei;
+    src: url('../font/AliHYAiHei.ttf');
+}
+
+html{
+    font-size: 14px;
+}
+html,
+body{
+    height:100%;
+    overflow: hidden;
+    background:#1e1f27;
+}
+body{
+    color:#dcdedd;
+    font-family: AliHYAiHei, Helvetica, Arial, sans-serif;
+    transition: background 1s ease;
+}
+
+body:-webkit-full-screen{
+    background-color:#1e1f27 !important;
+}
+body:-webkit-full-screen {
+    width: 100% !important;
+    height: 100% !important;
+}
+body[data-state=loading]{
+    background:url("../img/bg/loading.png") no-repeat center / cover;
+}
+body[data-state=home]{
+    background:url("../img/bg/home.jpg") no-repeat center / cover;
+}
+body[data-state=what-is-ai]{
+    background:url("../img/bg/what_is_ai.png") no-repeat center / cover;
+}
+body[data-state=future-ai]{
+    background:url("../img/bg/future_ai.png") no-repeat center / cover;
+}
+body[data-state=area]{
+    background:url("../img/bg/area.png") no-repeat center / cover;
+}
+body[data-state=about]{
+    background:url("../img/bg/footer.jpg") no-repeat center / cover;
+}
+
+li{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    color:inherit;
+    opacity:0.8;
+}
+a:hover{
+    opacity:1;
+}
+a:active{
+    opacity:0.5;
+}
+canvas{
+    position: relative;
+    /*pointer-events: none;*/
+}
+h1{
+    font-size:3rem;
+}
+h3{
+    font-size:1.1rem;
+}
+h1 span,
+h2 span{
+    font-size:0.5em;
+    color:#45dfcb;
+}
+
+/* pub */
+
+.message p,
+.message h3{
+    margin-top:2vh;
+    font-family: 'Microsoft JhengHei', Helvetica, Arial, sans-serif;
+}
+
+.hidden{
+    display: none;
+}
+
+.box-side-nav{
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap: wrap;
+    width:15px;
+}
+.box-side-nav a{
+    margin: 15px 0;
+    display: block;
+    width:10px;
+    height:10px;
+    border-radius: 50%;
+    background:white;
+}
+.box-side-nav li.current a{
+    background:#45dfcb;
+}
+
+.inner-box{
+    position: relative;
+    z-index:5;
+}

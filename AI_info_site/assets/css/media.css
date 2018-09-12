@@ -1,0 +1,77 @@
+@media screen and (max-width: 768px){
+    html{
+        font-size:12px;
+    }
+    body{
+        padding: 0 15px;
+    }
+    .logo{
+        width:120px;
+    }
+    .music-panel{
+        margin-left:5px;
+    }
+    .control-group .icon{
+        margin: 0 15px;
+    }
+    .ai-message .content-list .content-item{
+        width:85%;
+    }
+    .area .inner-box .content-list{
+        height:55vh;
+    }
+    .area .inner-box .content-item{
+        width:47%;
+    }
+}
+
+@media screen and (max-width: 460px){
+    html{
+        font-size:10px;
+    }
+
+    .content{
+        width:100%;
+    }
+
+    .nav{
+        display: none;
+    }
+
+
+    .logo{
+        width:100px;
+        height:80px;
+    }
+
+    #music-panel{
+        display: none;
+    }
+
+    .home canvas{
+        display: none;
+    }
+
+    .ai-message > img{
+        width:20vw;
+    }
+    .future-ai > img{
+        width:15vw;
+    }
+
+    .box-side-nav a{
+        width:8px;
+        height:8px;
+    }
+
+    .ai-message .inner-box,
+    .ai-message .content-list .content-item{
+        width:100%;
+    }
+    .area .inner-box .content-list{
+        height:55vh;
+    }
+    .area .inner-box .content-item{
+        width:47%;
+    }
+}

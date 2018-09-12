@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 样式 -->
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/parameter.css">
+    <link rel="stylesheet" href="assets/css/loading.css">
+    <link rel="stylesheet" href="assets/css/media.css">
+    <title>Artificial intelligence-2018</title>
+</head>
+<!-- 初始化loading状态 -->
+<body data-state="loading">
+    <!-- main  默认隐藏 -->
+    <main id="main" class="hidden">
+
+        <!-- 头部 -->
+        <header class="header">
+            <div class="logo margin-box">
+                <h2>
+                    <strong>
+                        人工智能
+                        <img src="assets/img/logo.png" alt="logo">
+                    </strong>
+                    <span class="inner">Artificial intelligence</span>
+                </h2>
+            </div>
+            <!-- 音乐可视化面板容器 -->
+            <div id="music-panel" class="music-panel"></div>
+            <!-- 控制按钮组 -->
+            <div id="control-group" class="control-group">
+                <!-- 全屏 -->
+                <a id="full-btn" class="icon full" title="全屏模式"></a>
+                <!-- 静音 -->
+                <a id="music-btn" class="icon music"  title="背景音乐"></a>
+            </div>
+        </header>
+
+        <!-- 全局导航条 -->
+        <nav class="nav">
+            <ul class="side-nav">
+                <li>
+                    <a href="" data-index="0">
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" data-index="1">
+                        <span>What is AI</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" data-index="2">
+                        <span>Future AI</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" data-index=3>
+                        <span>Area</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" data-index="4">
+                        <span>About</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- 内容容器 -->
+        <div class="content">
+            <!-- 首屏 -->
+            <div class="home content-box">
+                <div class="inner-box">
+                    <h1>
+                        人工智能就是未来
+                        <span>Artificial intelligence is the future</span>
+                    </h1>
+                </div>
+                <img src="assets/img/home.png" alt="home">
+            </div>
+            <!-- AI是什么 -->
+            <div class="what-is-ai ai-message content-box">
+                <div class="inner-box">
+                    <div class="content-list message">
+                        <div class="content-item">
+                            <div>
+                                <h2>什么是人工智能？</h2>
+                                <p>
+                                    它是研究、开发用于模拟、延伸和扩展人的智能的理论、方法、技术及应用系统的一门新的技术科学。
+                                    人工智能是计算机科学的一个分支，它企图了解智能的实质，并生产出一种新的能以人类智能相似的方式做出反应的智能机器，该领域的研究包括机器人、语言识别、图像识别、自然语言处理和专家系统等。人工智能从诞生以来，理论和技术日益成熟，应用领域也不断扩大，可以设想，未来人工智能带来的科技产品，将会是人类智慧的“容器”。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="content-item">
+                            <div>
+                                <h2>人工智能发展历史</h2>
+                                <p>
+                                    20世纪中期，以英国数学家图灵为首的一大批科学家提出了一系列与人工智能有关的理论，研发了许多相关的实验工具，它们为人工智能的诞生提供了基础；1956年，达特茅斯会议召开，标志着人工智能学科正式被提出，半个世纪以来，人工智能学科发展得十分曲折。其中，经历了许多的艰难坎坷；20世纪末期，受到算法、硬件基础等因素的限制，人工智能技术一度陷入了低迷期；进入21世纪之后，云计算、大数据等计算机信息技术的迅速发展为人工智能技术的进步奠定了良好的基础，人脑芯片、深度学习算法、大数据、大规模并行计算的产生为人工智能的发展作出了巨大的贡献。人工智能发展过程中主要产生了行为主义、联结主义以及符号主义三种学派。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="content-item">
+                            <div>
+                                <h2>人工智能实现方式</h2>
+                                <p>
+                                    人工智能在计算机上实现时有2种不同的方式。一种是采用传统的编程技术，使系统呈现智能的效果，而不考虑所用方法是否与人或动物机体所用的方法相同。这种方法叫工程学方法（ENGINEERING APPROACH），它已在一些领域内作出了成果，如文字识别、电脑下棋等。另一种是模拟法（MODELING APPROACH），它不仅要看效果，还要求实现方法也和人类或生物机体所用的方法相同或相类似。遗传算法（GENERIC ALGORITHM，简称GA）和人工神经网络（ARTIFICIAL NEURAL NETWORK，简称ANN）均属后一类型。遗传算法模拟人类或生物的遗传-进化机制，人工神经网络则是模拟人类或动物大脑中神经细胞的活动方式。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="box-side-nav">
+                        <li class="current">
+                            <a href="" data-index="0"></a>
+                        </li>
+                        <li>
+                            <a href="" data-index="1"></a>
+                        </li>
+                        <li>
+                            <a href="" data-index="2"></a>
+                        </li>
+                    </ul>
+                </div>
+                <img src="assets/img/what_is_ai.png">
+            </div>
+            <!-- 未来的AI -->
+            <div class="future-ai ai-message content-box">
+                <div class="inner-box">
+                    <div class="content-list message">
+                        <div class="content-item">
+                            <div>
+                                <h2>人工智能当前的发展现状</h2>
+                                <p>
+                                    当前人工智能技术正处于飞速发展时期，大量的人工智能公司雨后春笋般层出不穷，国际的大型IT企业在不断收购新建立的公司，网络行业内的顶尖人才试图抢占行业制高点。人工智能技术发展过程中催生了许多新兴行业的出现，比如智能机器人、手势控制、自然语言处理、虚拟私人助理等。2016年，国际著名的咨询公司对全球超过900家人工智能企业的发展情况进行了统计分析，结果显示，21世纪，人工智能行业已经成为各国重要的创业及投资点，全球人工智能企业总融资金额超过48亿美元。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="content-item">
+                            <div>
+                                <h2>人工智能未来的发展趋势</h2>
+                                <p>
+                                    人工智能已经发展了很长时间，它在未来的发展问题是该学科有关研究人员讨论的重点，从现阶段的发展情况来说，未来人工智能可能会朝着以下几个方向发展。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="content-item">
+                            <div>
+                                <h2>更好地为人类服务</h2>
+                                <p>
+                                    人工智能本质上是模拟人的意识、思维的信息过程。虽然未来的机器人能够像人类一样思考，但总体而言，并不能完全与人类的思维保持一致，人工智能主要还是为人类服务为主，比如，协助警察监督各种违法犯罪行为、帮助人类处理各种生活杂务，将人类从繁重的体力劳动中解放出来。在这种情况下，人类需要树立终身学习的思想，不断充实自己，以免过分依赖于人工智能。比如，智能家居、智能厨房（美的）将厨房的各种电器连接在一起，通过1块屏幕即可操作各种家电，比如控制抽烟机的风度、灶台的火力等，人们不需要手动控制，极大地方便了人们的生活。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="content-item">
+                            <div>
+                                <h2>与人类平等</h2>
+                                <p>
+                                    人工智能本质上是模拟人的意识、思维的信息过程。虽然未来的机器人能够像人类一样思考，但总体而言，并不能完全与人类的思维保持一致，人工智能主要还是为人类服务为主，比如，协助警察监督各种违法犯罪行为、帮助人类处理各种生活杂务，将人类从繁重的体力劳动中解放出来。在这种情况下，人类需要树立终身学习的思想，不断充实自己，以免过分依赖于人工智能。比如，智能家居、智能厨房（美的）将厨房的各种电器连接在一起，通过1块屏幕即可操作各种家电，比如控制抽烟机的风度、灶台的火力等，人们不需要手动控制，极大地方便了人们的生活。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="content-item">
+                            <div>
+                                <h2>总结</h2>
+                                <p>
+                                    综上所述，人工智能属于全世界科研发展的前沿技术，发展过程中与信息技术、计算机技术、精密制造技术、互联网技术密切相关，对各行业、各领域的发展都有一定的影响，在人工智能发展过程中要认真、深刻地研究其未来的发展方向。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="box-side-nav">
+                        <li class="current">
+                            <a href="" data-index="0"></a>
+                        </li>
+                        <li>
+                            <a href="" data-index="1"></a>
+                        </li>
+                        <li>
+                            <a href="" data-index="2"></a>
+                        </li>
+                        <li>
+                            <a href="" data-index="3"></a>
+                        </li>
+                        <li>
+                            <a href="" data-index="4"></a>
+                        </li>
+                    </ul>
+                </div>
+                <img src="assets/img/d90b0fddc277f5aba80f07d48cb6db0a.png">
+            </div>
+            <!-- 应用领域 -->
+            <div class="area content-box">
+                <div class="inner-box">
+                    <h2>应用领域</h2>
+                    <div class="content-list message">
+                        <div class="content-item-wrap">
+                            <div class="content-item">
+                                <img src="assets/img/area/机器学习-深度学习.png">
+                                <div class="text-box">
+                                    <h3>机器学习-深度学习</h3>
+                                </div>
+                                <div class="message-box">
+                                    <p>基于现有数据进行学习操作，开发计算机算法的公司。</p>
+                                    <p>示例包括测试数据模型和分析行为数据的办公软件平台。</p>
+                                </div>
+                            </div>
+                            <div class="content-item">
+                                <img src="assets/img/area/计算机视觉-通用.png">
+                                <div class="text-box">
+                                    <h3>计算机视觉-通用</h3>
+                                </div>
+                                <div class="message-box">
+                                    <p>通过处理和分析图像以从中获取信息和识别对象，致力于技术开发的公司。</p>
+                                    <p>示例包括用于开发人员的视觉搜索平台和图像标记API。</p>
+                                </div>
+                            </div>
+                            <div class="content-item">
+                                <img src="assets/img/area/智能机器人.png">
+                                <div class="text-box">
+                                    <h3>智能机器人</h3>
+                                </div>
+                                <div class="message-box">
+                                    <p>可以从自身经验中学习，并根据自己的环境条件自主行动的机器人。</p>
+                                    <p>
+                                        例如，可以在互动中对人们的情绪作出反应的家庭机器人，
+                                        可以根据客户在商店中购买物品的零售机器人。
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="content-item">
+                                <img src="assets/img/area/计算机视觉-应用.png">
+                                <div class="text-box">
+                                    <h3>计算机视觉-应用</h3>
+                                </div>
+                                <div class="message-box">
+                                    <p>处理垂直领域具体用例中的图像，运用相关技术的公司。</p>
+                                    <p>示例包括识别脸部或能够通过拍摄来搜索零售商品的软件。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-item-wrap">
+                            <div class="content-item">
+                                <img src="assets/img/area/自然语言处理-通用.png">
+                                <div class="text-box">
+                                    <h3>自然语言处理-通用</h3>
+                                </div>
+                                <div class="message-box">
+                                    <p>
+                                        通过对人类语言的处理并将其转换为可理解的描述，开发计算机算法的公司。
+                                    </p>
+                                    <p>示例包括自动生成叙述文本，并挖掘应用到数据中。</p>
+                                </div>
+                            </div>
+                            <div class="content-item">
+                                <img src="assets/img/area/个人虚拟助理.png">
+                                <div class="text-box">
+                                    <h3>个人虚拟助理</h3>
+                                </div>
+                                <div class="message-box">
+                                    <p>基于反馈和命令为个人执行日常任务和服务的软件助理。</p>
+                                    <p>示例包括网站上的客户服务助理及帮助管理用户日程的个人助理应用等。</p>
+                                </div>
+                            </div>
+                            <div class="content-item">
+                                <img src="assets/img/area/自然语言处理-语音识别.png">
+                                <div class="text-box">
+                                    <h3>自然语言处理-语音识别</h3>
+                                </div>
+                                <div class="message-box">
+                                    <p>
+                                        能够处理人类言语的声音片段，精准识别词语并从中推断出含义的公司。
+                                    </p>
+                                    <p>
+                                        示例包括检测语音命令并将其转换为可操作数据的软件。
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="content-item">
+                                <img src="assets/img/area/语音翻译.png">
+                                <div class="text-box">
+                                    <h3>语音翻译</h3>
+                                </div>
+                                <div class="message-box">
+                                    <p>可以自动识别人类的语言并实时翻译成另一种语言的软件。</p>
+                                    <p>示例包括将视频聊天和网络讨论内容自动、实时的转换为多语言的软件。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-item-wrap">
+                            <div class="content-item">
+                                <img src="assets/img/area/视频内容识别.png">
+                                <div class="text-box">
+                                    <h3>视频内容识别</h3>
+                                </div>
+                                <div class="message-box">
+                                    <p>
+                                        将视频内容抽样与源内容比较。通过其独特特征来识别内容的软件。
+                                    </p>
+                                    <p>
+                                        示例包括通过将其与受版权保护的内容进行比较，在用户上传的视频中检测受版权保护内容的软件。
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="content-item">
+                                <img src="assets/img/area/手势控制.png">
+                                <div class="text-box">
+                                    <h3>手势控制</h3>
+                                </div>
+                                <div class="message-box">
+                                    <p>
+                                        能够通过手势与计算机进行交互和通信的公司。
+                                    </p>
+                                    <p>
+                                        示例包括能够通过身体动作来控制视频游戏角色，或者通过单独的手势来操作计算机和电视的软件。
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="content-item">
+                                <img src="assets/img/area/情境感知计算.png">
+                                <div class="text-box">
+                                    <h3>自情境感知计算</h3>
+                                </div>
+                                <div class="message-box">
+                                    <p>
+                                        自动感知其所处环境并提供相应使用的软件。例如位置、方向、照明、并相应地适应其行为。
+                                    </p>
+                                    <p>
+                                        示例包括当检测到环境处于黑暗时自动调高亮度的应用程序。
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="content-item">
+                                <img src="assets/img/area/推荐引擎和协同过滤.png">
+                                <div class="text-box">
+                                    <h3>推荐引擎和协同过滤</h3>
+                                </div>
+                                <div class="message-box">
+                                    <p>检测用户对电影或者餐馆的偏好和兴趣，并为其提供个性化推荐的软件。</p>
+                                    <p>示例包括音乐推荐应用和餐厅推荐网站，根据过去的选择提供推荐。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="box-side-nav">
+                        <li class="current">
+                            <a href="" data-index="0"></a>
+                        </li>
+                        <li>
+                            <a href="" data-index="1"></a>
+                        </li>
+                        <li>
+                            <a href="" data-index="2"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 关于我们 -->
+            <div class="about content-box">
+                <div class="inner-box">
+                    <h2>关于我们</h2>
+                    <div class="message-box">
+                        <p>制作团队：XXX</p>
+                        <p>队长：XXX</p>
+                        <p>成员：XXX、XXX</p>
+                    </div>
+                    <div class="footer-box">
+                        <span>©XXX团队 - 2018</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- loading -->
+    <div class="loading">
+        <div>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+
+    <!-- 工具 -->
+    <script src="assets/js/utils.js"></script>
+    <!-- 配置 -->
+    <script src="assets/js/config.js"></script>
+    <!-- 公用类 -->
+    <script src="assets/js/pubClass.js"></script>
+    <!-- 粒子系统 -->
+    <script src="assets/js/particle_system.js"></script>
+    <!-- 音乐可视化面板 -->
+    <script src="assets/js/music_panel.js"></script>
+    <!-- dom -->
+    <script src="assets/js/elemEvent.js"></script>
+    <!-- 入口文件 -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

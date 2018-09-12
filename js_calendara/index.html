@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS简单日历</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        html,body{
+            width:100%;
+            height:100%;
+            overflow: hidden;
+        }
+        li{
+            float: left;
+            list-style-type: none;
+        }
+        .container{
+            margin: 5% auto;
+            padding:10px;
+            width:500px;
+            height:50px;
+            background:#fff;
+            border-radius: 10px;
+            box-shadow: 0 0 2px 1px #000;
+            transition: height 1s;
+            overflow: hidden;
+        }
+        .container > div{
+            width:100%;
+        }
+        .container .top{
+            display: flex;
+            align-items: center;
+            height:50px;
+        }
+        .container .top select{
+            margin:0 1% 0 8%;
+        }
+        .container .top input{
+            margin-left:20%;
+            width:50px;
+            height:30px;
+        }
+        .container .con{
+            height:auto;
+        }
+        .container .con ul{
+            width:100%;
+        }
+        .container .con .week{
+            height:50px;
+            border-bottom: 1px solid #ccc;
+        }
+        .container .con .day{
+            height:auto;
+        }
+        .container .con ul li{
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            width:71.4px;
+            height:50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top">
+            <select id="year">
+                <option value="">请选择年份</option>
+            </select>年
+            <select id="month">
+                <option value="">请选择月份</option>
+            </select>月
+            <input type="button" value="查询">
+        </div>
+        <div class="con">
+            <ul class="week">
+                <li>一</li>
+                <li>二</li>
+                <li>三</li>
+                <li>四</li>
+                <li>五</li>
+                <li>六</li>
+                <li>日</li>
+            </ul>
+            <ul class="day">
+
+            </ul>
+        </div>
+    </div>
+    <script>
+        let btn = document.querySelector('.top input[type=button]'),
+            lastDay = [31,28,31,30,31,30,31,31,30,31,30,31];
+        function if_leap(year){
+            if (year%100 === 0){
+                if (year%400===0){
+                    return true;
+                }
+            } else if(year%4 === 0){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        btn.addEventListener('click',()=>{
+            let year = document.getElementById('year'),
+                month = document.getElementById('month');
+            if (year.value===''||month.value===''){
+                alert('大兄弟，你没填完啊！');
+                return;
+            }
+            document.querySelector('.container').style.height = '400px';
+            let firstDay = new Date(year.value,month.value-1,1),
+                oUl = document.querySelector('.con .day'),
+                day = 0;
+            oUl.innerHTML = '';
+            if (if_leap(year.value)){
+                lastDay[1] = 29;
+            }else{
+                lastDay[1] = 28;
+            }
+            forEach(i=>{
+                let li = document.createElement('li');
+                if (i>=firstDay.getDay() && day<lastDay[month.value-1]){
+                    day++;
+                    li.innerHTML = day;
+                }else{
+                    li.innerHTML = '';
+                }
+                oUl.appendChild(li);
+            },1,43);
+        });
+        function forEach(fn,num,length){
+            for (let i = num;i<length;i++){
+                fn(i);
+            }
+        }
+        forEach(i=>{
+            let year = document.getElementById('year'),
+                option = document.createElement('option');
+            option.innerHTML = i;
+            year.appendChild(option);
+        },1990,2051);
+        forEach(i=>{
+            let month = document.getElementById('month'),
+                option = document.createElement('option');
+            option.innerHTML = i;
+            month.appendChild(option);
+        },1,13);
+    </script>
+</body>
+</html>
