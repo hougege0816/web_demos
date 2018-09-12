@@ -47,7 +47,7 @@
 
 网站类：
 
-- [人工智能科普网站（需服务端环境下运行）](https://gd4ark.github.io/web_demos/AI_info_site/)
+- [人工智能科普网站](https://gd4ark.github.io/web_demos/AI_info_site/)
 
 
 
