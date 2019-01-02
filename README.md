@@ -4,9 +4,9 @@
 
 游戏类：
 
-- [扫雷](https://gd4ark.github.io/web_demos/mineSweeper/index.html)
+- [扫雷](https://gd4ark.github.io/web_demos/mineSweeper)
 
-- [贪吃蛇](https://gd4ark.github.io/web_demos/Snake/index.html)
+- [贪吃蛇](https://gd4ark.github.io/web_demos/Snake)
 
 - [flappy bird](https://gd4ark.github.io/web_demos/flappy_bird/)
 
