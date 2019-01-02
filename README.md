@@ -45,7 +45,7 @@
 
 - [计算器](https://gd4ark.github.io/web_demos/calculator/)
 
-
+- [时钟](https://gd4ark.github.io/web_demos/clock/)
 
 网站类：
 
