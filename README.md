@@ -4,7 +4,7 @@
 
 游戏类：
 
-- [2048](https://gd4ark.github.io/web_demos/2048/)（这个我后来重写了，在这个仓库：https://github.com/gd4Ark/2048）
+- [2048](https://gd4ark.github.io/web_demos/2048/)（这个我后来重写了，在这个仓库：https://github.com/gd4Ark/2048 ）
 
 - [扫雷](https://gd4ark.github.io/web_demos/mineSweeper)
 
