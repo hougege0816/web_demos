@@ -1,0 +1,117 @@
+    <!doctype html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            html,body{
+                width:100%;
+                height:100%;
+                overflow: hidden;
+            }
+            #canvas{
+                display: block;
+                margin:5% auto;
+                /* background:#333; */
+                border: 2px solid #333;
+                border-radius: 50%;
+                box-shadow: 0 0 5px 3px #333;
+            }
+        </style>
+    </head>
+    <body>
+    <canvas id="canvas"></canvas>
+
+    <script>
+        window.addEventListener('load',()=>{
+            let can = document.getElementById('canvas'),
+                cxt = can.getContext('2d');
+            can.width = 305;
+            can.height = 305;
+
+            function Clock(){
+                this.r = 150;
+            }
+            Clock.prototype = {
+                container : function(){
+                    cxt.translate(can.width/2,can.height/2);
+                    cxt.beginPath();
+                    cxt.strokeStyle = 'rgba(30,53,83,.9)';
+                    cxt.arc(0,0,this.r,0,Math.PI*2,false);
+                    cxt.stroke();
+                    cxt.beginPath();
+                    cxt.save();
+                    cxt.fillStyle = '#333';
+                    for (let i=0;i<12;i++){
+                        if (i>0){
+                            cxt.rotate(Math.PI/180*30);
+                        }
+                        cxt.fillRect(0,125,1,10);
+                    }
+                    cxt.restore();
+                },
+                update : function(){
+                    this.date = new Date();
+                    this.hours = this.date.getHours();
+                    this.minutes = this.date.getMinutes();
+                    this.seconds = this.date.getSeconds();
+                    this.drawHours(12/this.hours);
+                    this.drawMinutes(60/this.minutes);
+                    this.drawSecond(60/this.seconds);
+                },
+                drawHours : function(rot){
+                    cxt.beginPath();
+                    cxt.save();
+                    cxt.rotate(Math.PI/180*180);
+                    cxt.rotate(Math.PI/180*(360/rot));
+                    cxt.fillStyle = '#333';
+                    cxt.fillRect(-3,0,6,80);
+                    cxt.restore();
+                },
+                drawMinutes : function(rot){
+                    cxt.beginPath();
+                    cxt.save();
+                    cxt.rotate(Math.PI/180*180);
+                    cxt.rotate(Math.PI/180*(360/rot));
+                    cxt.fillStyle = '#333';
+                    cxt.fillRect(0,-1.5,3,100);
+                    cxt.restore();
+                },
+                drawSecond : function(rot){
+                    cxt.beginPath();
+                    cxt.save();
+                    cxt.rotate(Math.PI/180*180);
+                    cxt.rotate(Math.PI/180*(360/rot));
+                    cxt.fillStyle = '#333';
+                    cxt.fillRect(0,-0.5,1,120);
+                    cxt.restore();
+                }
+            };
+
+            !function initClock(){
+                let clock = new Clock();
+                clock.container();
+                !function updateTime(){
+                    cxt.translate(-can.width/2,-can.height/2);
+                    cxt.clearRect(0,0,can.width,can.height);
+                    clock.container();
+                    clock.update();
+                    cxt.beginPath();
+                    cxt.arc(0,0,6,0,Math.PI*2,false);
+                    cxt.fillStyle = 'rgba(30,53,83,1)';
+                    cxt.fill();
+                    requestAnimationFrame(updateTime);
+                }();
+            }();
+
+        });
+    </script>
+    </body>
+    </html>
