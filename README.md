@@ -50,6 +50,7 @@
 网站类：
 
 - [人工智能科普网站](https://gd4ark.github.io/web_demos/AI_info_site/)
+- [仿网易云APP布局](https://gd4ark.github.io/web_demos/netease_cloud_layout/)（移动端，不完整）
 
 
 
