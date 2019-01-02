@@ -1,0 +1,598 @@
+.music_warp{
+    overflow: hidden;
+}
+.music_header{
+    width:100%;
+    height:8%;
+    background:#fff;
+}
+.music_header ul{
+    width:100%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.music_header ul li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:25%;
+    height:96%;
+    cursor: pointer;
+}
+.music_header ul li.current{
+    color: red;
+    border-bottom: 2px solid #D23A2D;
+}
+.music_box{
+    width:400%;
+    height:92%;
+    background: #fff;
+    transition: all .5s;
+}
+.music_box:hover{
+    margin-left:-300%;
+}
+.music_box > div{
+    float: left;
+    width:25%;
+    height:100%;
+}
+/*个人推荐*/
+.Personal_box{
+    width:100%;
+    height:100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.Personal_box .banner{
+    width:100%;
+    height:30vh;
+    overflow: hidden;
+}
+.Personal_box .banner .pic{
+    width:500%;
+    height:100%;
+}
+.Personal_box .banner .pic img{
+    float: left;
+    width:20%;
+    height:100%;
+}
+.Personal_box .banner .count{
+    position: relative;
+    top:-10%;
+    margin: 0 auto;
+    width:30%;
+    height:15px;
+}
+.Personal_box .banner .count ul{
+    width:100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.Personal_box .banner .count li{
+    width:7px;
+    height:7px;
+    border-radius: 50%;
+    background:#fff;
+    cursor: pointer;
+}
+.Personal_box .banner .count li.current{
+    background: #ff3a45;
+}
+.Personal_box .recommend{
+    width:100%;
+    height:20vh;
+    border-bottom: 1px solid #eee;
+}
+.Personal_box .recommend > div{
+    float: left;
+    width:33.3%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.Personal_box .recommend > div > div{
+    margin-top:5%;
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+    border: 1px solid #D23A2D;
+}
+.Personal_box .recommend > div > span{
+    width:100%;
+    height:20%;
+    text-align: center;
+    font-size: 12px;
+}
+.Personal_box .recommend_box{
+    margin-top:2%;
+    width:100%;
+    height:65vh;
+
+}
+.head_box{
+    width:100%;
+    height:6%;
+    display: flex;
+    align-items: center;
+}
+.head_box div{
+    margin-top:-2px;
+    width:5px;
+    height:5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: transparent transparent #000 #000;
+    transform: rotate(225deg);
+}
+.head_box span{
+    margin-left:2%;
+    font-size: 15px;
+}
+.recommend_box .content_box1{
+    margin-top:2%;
+    width:100%;
+    height:92%;
+    overflow: hidden;
+}
+.recommend_box .content_box1 > div{
+    width:100%;
+    height:50%;
+    display: flex;
+    align-items: center;
+}
+.recommend_box .content_box1 > div > div{
+    width:33.3vw;
+    height:100%;
+    text-align: center;
+}
+.recommend_box .content_box1 > div > div > div{
+    position: relative;
+    margin: 0 auto 5%;
+    width: 32vw;
+    height: 32vw;
+}
+.recommend_box .content_box1 span{
+    line-height:1.5;
+    font-size:12px;
+}
+.recommend_box .content_box1 img{
+    width:100%;
+    height:100%;
+}
+.recommend_box .content_box1 strong{
+    position: absolute;
+    top:0;
+    right:0;
+    width:100%;
+    height:11%;
+    font-size:12px;
+    color: #fff;
+    background:rgba(0,0,0,0.2);
+    text-align: right;
+}
+.newMusic span{
+    display: block;
+}
+.newMusic span:nth-last-child(1){
+    font-size: 10px;
+}
+.Exclusive_broadcasting{
+    margin-top:2%;
+    width:100%;
+    height:65vh;
+}
+.Exclusive_broadcasting .content_box1{
+    margin-top:2%;
+    width:100%;
+    height:92%;
+}
+.Exclusive_broadcasting .content_box1 .left_box{
+    float: left;
+    width:49%;
+    height:50%;
+}
+.Exclusive_broadcasting .content_box1 .right_box{
+    float: right;
+    width:49%;
+    height:50%;
+}
+.Exclusive_broadcasting .content_box1 .bottom_box{
+    float: left;
+    width:100%;
+    height:50%;
+}
+.Exclusive_broadcasting .content_box1 > div > div{
+    width:100%;
+    height:80%;
+}
+.Exclusive_broadcasting .content_box1 img{
+    width:100%;;
+    height:100%;
+}
+.Exclusive_broadcasting .content_box1 span{
+    font-size: 11px;
+    margin-left:2%;
+}
+.recommend_MV{
+    margin-top:2%;
+    width:100%;
+    height:60vh;
+}
+.recommend_MV .content_box1{
+    margin-top:2%;
+    width:100%;
+    height:92%;
+}
+.recommend_MV .content_box1 .row{
+    width:100%;
+    height:50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.recommend_MV .content_box1 .row > div{
+    width:49%;
+    height:98%;
+}
+.recommend_MV .content_box1 .row > div > div{
+    position: relative;
+    width:100%;
+    height:75%;
+    background: #5490ff;
+}
+.recommend_MV .content_box1 img{
+    width:100%;
+    height:100%;
+}
+.recommend_MV .content_box1 span{
+    display: block;
+    margin:5px 0 0 2%;
+    font-size: 12px;
+    width:98%;
+    height:8%;
+    overflow: hidden;
+}
+.recommend_MV .content_box1 span:nth-last-child(1){
+    margin-top:1%;
+    font-size: 10px;
+}
+.recommend_MV .content_box1 strong{
+    position: absolute;
+    top:1%;
+    right:0;
+    padding-right: 1%;
+    width:99%;
+    height:12%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: rgba(0,0,0,.3);
+    text-align: right;
+    font-size: 12px;
+    color:#fff;
+}
+.Anchor_station_box{
+    margin-top:2%;
+    width:100%;
+    height:60vh;
+}
+
+/*歌单*/
+.song_sheet_box{
+    width:100%;
+    height:100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.song_sheet_box_head{
+    display: flex;
+    align-items: center;
+    width:100%;
+    height:30vh;
+    background: #5490ff;
+}
+.song_sheet_box_head > img{
+    margin: 0 3% 0;
+    width:120px;
+    height:120px;
+}
+.song_sheet_box_head > div > *{
+    line-height:2;
+    color: #fff;
+}
+.song_sheet_box_head h3{
+    position: relative;
+    font-weight: normal;
+    font-size:18px;
+}
+.song_sheet_box_head h3::after{
+    content: "";
+    position: absolute;
+    top: 10px;
+    width:10px;
+    height:10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: transparent transparent rgba(255,255,255,0.6) rgba(255,255,255,0.6);
+    transform: rotate(-135deg);
+}
+.song_sheet_box_head p{
+    font-size:16px;
+}
+.song_sheet_box_head span{
+    font-size: 12px;
+}
+.song_sheet_box_all_the_song{
+    width:100%;
+    height:10vh;
+    background: #fff;
+    color: #333;
+}
+.song_sheet_box_all_the_song > div{
+    display: flex;
+    align-items: center;
+    height:100%;
+}
+.song_sheet_box_all_the_song > div > div{
+    width:100%;
+    height:50%;
+    border:1px solid #ccc;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.song_sheet_box_all_the_song .left{
+    float: left;
+    margin-left:2%;
+    width:90px;
+}
+.song_sheet_box_all_the_song .left span{
+    position: relative;
+    margin: 3px 0 0 10%;
+}
+.song_sheet_box_all_the_song .left span::after{
+    content: '';
+    position: absolute;
+    top:1px;
+    width:8px;
+    height:8px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent transparent rgba(0,0,0,0.6) rgba(0,0,0,0.6);
+    transform: rotate(-135deg);
+}
+.song_sheet_box_all_the_song .right{
+    float: right;
+    width:150px;
+}
+.song_sheet_box_all_the_song .right span{
+    margin-left:10px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+}
+.song_sheet_box_all_the_song .right span:hover{
+    background: #ccc;
+    cursor: pointer;
+}
+.song_sheet_box_all_the_song .right span::after{
+    content: '|';
+    margin-left:5px;
+}
+.song_sheet_box_all_the_song .right span:nth-last-child(1)::after{
+    content: '';
+}
+.song_sheet_box_content{
+    width:100%;
+    height:auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.song_sheet_box_content > div{
+    margin-bottom:1%;
+    width:49.5%;
+    height:60vw;
+}
+.song_sheet_box_content > div > div {
+    position: relative;
+    margin: 0 auto;
+    width: 49vw;
+    height: 49vw;
+}
+.song_sheet_box_content > div > div img{
+    width:100%;
+    height:100%;
+}
+.song_sheet_box_content > div > div span{
+    position: absolute;
+    color: #fff;
+    font-size: 10px;
+}
+.song_sheet_box_content > div > div span:nth-last-child(1){
+    bottom: 2px;
+    left:2px;
+}
+.song_sheet_box_content > div > div span:nth-last-child(2){
+    top:2px;
+    right:2px;
+}
+.song_sheet_box_content > div > span{
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    width:49vw;
+    height:6vh;
+}
+
+/*主播电台*/
+.Anchor_station_box{
+    margin: 0 auto;
+    height:100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.Anchor_station_box .banner{
+    width:100%;
+    height:30vh;
+}
+.Anchor_station_box .banner .pic{
+    width:500%;
+    height:100%;
+}
+.Anchor_station_box .banner .pic > div{
+    float: left;
+    width:20%;
+    height:100%;
+}
+.Anchor_station_box .banner img{
+    width:100%;
+    height:100%;
+}
+.Anchor_station_box .banner .count{
+    position: relative;
+    top:-30px;
+    margin: 0 auto;
+    width:40%;
+    height:30px;
+}
+.Anchor_station_box .banner .count ul{
+    width:100%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.Anchor_station_box .banner .count li{
+    width:8px;
+    height:8px;
+    border-radius: 50%;
+    background:rgba(255,255,255,.6);
+}
+.Anchor_station_box .banner .count li.current{
+    background:rgba(255,0,0,.6);
+}
+.Anchor_station_classification{
+    width:100%;
+    height:10vh;
+    border-bottom: 1px solid #eee;
+}
+.Anchor_station_classification > div{
+    float: left;
+    width:49.8%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Anchor_station_classification > div:hover{
+    background: #5490ff;
+    cursor: pointer;
+}
+.Anchor_station_classification .left{
+    border-right:1px solid #eee;
+}
+.Anchor_station_box_box{
+    margin-top:2%;
+}
+.Anchor_station_box_box .row > div{
+    margin-bottom:2%;
+}
+.Anchor_station_box_box .row > div > div span{
+    position: absolute;
+    bottom:0;
+    left:0;
+    color: #fff;
+}
+.Anchor_station_box_box .row > div > span{
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width:100%;
+    height:5vh;
+}
+
+/*排行榜*/
+.Ranking_List_box{
+    width:100%;
+    height:100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background:rgba(238,238,238,.4);
+}
+.Ranking_List_box h3{
+    line-height: 2;
+}
+.Official_list{
+    width:100%;
+    height:auto;
+}
+.Official_list > div{
+    display: flex;
+    align-items: center;
+    margin-top:5px;
+    width:100%;
+    height:20vh;
+    border-bottom: 1px solid #eee;
+}
+.Official_list > div img{
+    width:20vh;
+    height:20vh;
+}
+.Official_list > div > div{
+    float: left;
+    width:70%;
+    height:100%;
+}
+.Official_list > div > div > span{
+    margin-left:2%;
+    display: block;
+    line-height: 2;
+    color: #333;
+}
+.Official_list > div > div > span:nth-child(1){
+    margin-top:3vh;
+}
+.Global_standings{
+    width:100%;
+    height:auto;
+}
+.Global_box{
+    width:100%;
+    height:auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.Global_box > div{
+    margin-bottom:1vh;
+    width:32.3vw;
+    height:40vw;
+}
+.Global_box > div > div{
+    width:32.3vw;
+    height:32.3vw;
+}
+.Global_box > div > div img{
+    width:100%;
+    height:100%;
+}
+.Global_box > div > span{
+    padding:0 2% 0 2%;
+    width:96%;
+    height:7.7vw;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}

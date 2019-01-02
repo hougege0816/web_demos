@@ -1,0 +1,1515 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>仿网易云app</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/local.css">
+    <link rel="stylesheet" href="css/music.css">
+    <link rel="stylesheet" href="css/music_play.css">
+</head>
+<body>
+<!--主容器-->
+<div class="container">
+    <!--头部 导航栏-->
+    <div class="header">
+        <ul>
+            <li>菜单</li>
+            <li class="current">本地</li>
+            <li>音乐</li>
+            <li>朋友</li>
+            <li>搜索</li>
+        </ul>
+    </div>
+    <!--菜单-->
+    <div class="menu">
+        <div class="menu_container">
+            <div class="menu_header">
+                <div class="image">
+                    <img src="image/user.jpg">
+                </div>
+                <div class="user">
+                    <span class="user-name">玉树临风的18CM <span class="grade">LV8</span></span>
+                    <span class="sign">已签到</span>
+                </div>
+            </div>
+            <div class="menu_nav">
+                <div class="menu_nav_box">
+                    <ul>
+                        <li>我的信息</li>
+                        <li>会员中心</li>
+                        <li>商城</li>
+                        <li>在线免流量听歌</li>
+                        <li>我的好友</li>
+                        <li>附近的人</li>
+                        <li>个性换肤</li>
+                        <li>听歌识曲</li>
+                        <li>定时停止播放</li>
+                        <li>音乐闹钟</li>
+                        <li>驾驶模式</li>
+                        <li>音乐云盘</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="menu_bottom">
+                <ul>
+                    <li>夜间模式</li>
+                    <li>设置</li>
+                    <li>退出</li>
+                </ul>
+            </div>
+        </div>
+        <div class="menu_right"></div>
+    </div>
+    <!--内容-->
+    <div class="content">
+        <div class="content_wrap">
+            <!--本地-->
+            <div class="local_warp">
+                <div class="local_box">
+                    <div class="box">
+                        <div class="localMusic">
+                            <ul>
+                                <li><p><span>本地音乐</span><span>(<strong>0</strong>)</span></p></li>
+                                <li><p><span>最近播放</span><span>(<strong>0</strong>)</span></p></li>
+                                <li><p><span>下载管理</span><span>(<strong>0</strong>)</span></p></li>
+                                <li><p><span>我的电台</span><span>(<strong>0</strong>)</span></p></li>
+                                <li><p><span>我的收藏</span><span>(<strong>0</strong>)</span></p></li>
+                            </ul>
+                        </div>
+                        <div class="createPlayList song">
+                            <div class="top">
+                                <div></div>
+                                <span>创建的歌单(<strong>8</strong>)</span>
+                            </div>
+                            <ul>
+                                <li><img src="image/user.jpg">
+                                    <p>
+                                        <span>我喜欢的音乐</span><br><strong>0</strong>首，已下载<strong>0</strong>首
+                                    </p>
+                                </li>
+                                <li><img src="image/user.jpg">
+                                    <p>
+                                        <span>电音就是电音</span><br><strong>0</strong>首，已下载<strong>0</strong>首
+                                    </p>
+                                </li>
+                                <li><img src="image/user.jpg">
+                                    <p>
+                                        <span>精品BGM</span><br><strong>0</strong>首，已下载<strong>0</strong>首
+                                    </p>
+                                </li>
+                                <li><img src="image/user.jpg">
+                                    <p>
+                                        <span>来一波鬼畜</span><br><strong>0</strong>首，已下载<strong>0</strong>首
+                                    </p>
+                                </li>
+                                <li><img src="image/user.jpg">
+                                    <p>
+                                        <span>欧美</span><br><strong>0</strong>首，已下载<strong>0</strong>首
+                                    </p>
+                                </li>
+                                <li><img src="image/user.jpg">
+                                    <p>
+                                        <span>童音</span><br><strong>0</strong>首，已下载<strong>0</strong>首
+                                    </p>
+                                </li>
+                                <li><img src="image/user.jpg">
+                                    <p>
+                                        <span>华语</span><br><strong>0</strong>首，已下载<strong>0</strong>首
+                                    </p>
+                                </li>
+                                <li><img src="image/user.jpg">
+                                    <p>
+                                        <span>7obu</span><br><strong>0</strong>首，已下载<strong>0</strong>首
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="CollectionPlay song">
+                            <div class="top">
+                                <div></div>
+                                <span>收藏的歌单(<strong>8</strong>)</span>
+                            </div>
+                            <ul>
+                                <li><img src="image/user.jpg">
+                                    <p>
+                                        <span>收藏歌单1</span><br><strong>0</strong>首，已下载<strong>0</strong>首
+                                    </p>
+                                </li>
+                                <li><img src="image/user.jpg">
+                                    <p>
+                                        <span>收藏歌单2</span><br><strong>0</strong>首，已下载<strong>0</strong>首
+                                    </p>
+                                </li>
+                                <li><img src="image/user.jpg">
+                                    <p>
+                                        <span>收藏歌单3</span><br><strong>0</strong>首，已下载<strong>0</strong>首
+                                    </p>
+                                </li>
+                                <li><img src="image/user.jpg">
+                                    <p>
+                                        <span>收藏歌单4</span><br><strong>0</strong>首，已下载<strong>0</strong>首
+                                    </p>
+                                </li>
+                                <li><img src="image/user.jpg">
+                                    <p>
+                                        <span>收藏歌单5</span><br><strong>0</strong>首，已下载<strong>0</strong>首
+                                    </p>
+                                </li>
+                                <li><img src="image/user.jpg">
+                                    <p>
+                                        <span>收藏歌单6</span><br><strong>0</strong>首，已下载<strong>0</strong>首
+                                    </p>
+                                </li>
+                                <li><img src="image/user.jpg">
+                                    <p>
+                                        <span>收藏歌单7</span><br><strong>0</strong>首，已下载<strong>0</strong>首
+                                    </p>
+                                </li>
+                                <li><img src="image/user.jpg">
+                                    <p>
+                                        <span>收藏歌单8</span><br><strong>0</strong>首，已下载<strong>0</strong>首
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--音乐-->
+            <div class="music_warp">
+                <!--音乐 导航栏-->
+                <div class="music_header">
+                    <ul>
+                        <li class="current">个人推荐</li>
+                        <li>歌单</li>
+                        <li>主播电台</li>
+                        <li>排行榜</li>
+                    </ul>
+                </div>
+                <!--音乐 内容-->
+                <div class="music_box">
+                    <!--个人推荐-->
+                    <div class="Personal">
+                        <div class="Personal_box">
+                            <!--横幅 轮播图-->
+                            <div class="banner">
+                                <div class="pic">
+                                    <img src="image/banner-1.jpg">
+                                    <img src="image/banner-2.jpg">
+                                    <img src="image/banner-3.jpg">
+                                    <img src="image/banner-4.jpg">
+                                    <img src="image/banner-5.jpg">
+                                </div>
+                                <div class="count">
+                                    <ul>
+                                        <li class="current"></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--私人FM 每日推荐 云音乐新歌-->
+                            <div class="recommend">
+                                <div class="privateFM_box">
+                                    <div></div>
+                                    <span>私人FM</span>
+                                </div>
+                                <div class="daily_song">
+                                    <div></div>
+                                    <span>每日歌曲推荐</span>
+                                </div>
+                                <div class="newMusic">
+                                    <div></div>
+                                    <span>云音乐新歌榜</span>
+                                </div>
+                            </div>
+                            <!--推荐歌单-->
+                            <div class="recommend_song_sheet recommend_box">
+                                <div class="head_box">
+                                    <span>推荐歌单</span>
+                                    <div></div>
+                                </div>
+                                <div class="content_box1">
+                                    <div class="row">
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <strong>195万</strong>
+                                            </div>
+                                            <span>歌单</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <strong>195万</strong>
+                                            </div>
+                                            <span>歌单</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <strong>195万</strong>
+                                            </div>
+                                            <span>歌单</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <strong>195万</strong>
+                                            </div>
+                                            <span>歌单</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <strong>195万</strong>
+                                            </div>
+                                            <span>歌单</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <strong>195万</strong>
+                                            </div>
+                                            <span>歌单</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--最新音乐-->
+                            <div class="newMusic recommend_box">
+                                <div class="head_box">
+                                    <span>最新音乐</span>
+                                    <div></div>
+                                </div>
+                                <div class="content_box1">
+                                    <div class="row">
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                            </div>
+                                            <span>歌名</span>
+                                            <span>歌手</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                            </div>
+                                            <span>歌名</span>
+                                            <span>歌手</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                            </div>
+                                            <span>歌名</span>
+                                            <span>歌手</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                            </div>
+                                            <span>歌名</span>
+                                            <span>歌手</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                            </div>
+                                            <span>歌名</span>
+                                            <span>歌手</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                            </div>
+                                            <span>歌名</span>
+                                            <span>歌手</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--独家放送-->
+                            <div class="Exclusive_broadcasting">
+                                <div class="head_box">
+                                    <span>独家放送</span>
+                                    <div></div>
+                                </div>
+                                <div class="content_box1">
+                                    <div class="left_box">
+                                        <div>
+                                            <img src="image/user.jpg">
+                                        </div>
+                                        <span>标题</span>
+                                    </div>
+                                    <div class="right_box">
+                                        <div>
+                                            <img src="image/user.jpg">
+                                        </div>
+                                        <span>标题</span>
+                                    </div>
+                                    <div class="bottom_box">
+                                        <div>
+                                            <img src="image/user.jpg">
+                                        </div>
+                                        <span>标题</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--推荐MV-->
+                            <div class="recommend_MV">
+                                <div class="head_box">
+                                    <span>推荐MV</span>
+                                    <div></div>
+                                </div>
+                                <div class="content_box1">
+                                    <div class="row">
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <strong>195万</strong>
+                                            </div>
+                                            <span>歌名</span>
+                                            <span>歌手</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <strong>195万</strong>
+                                            </div>
+                                            <span>歌名</span>
+                                            <span>歌手</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <strong>195万</strong>
+                                            </div>
+                                            <span>歌名</span>
+                                            <span>歌手</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <strong>195万</strong>
+                                            </div>
+                                            <span>歌名</span>
+                                            <span>歌手</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--主播电台-->
+                            <div class="Anchor_station_box recommend_box">
+                                <div class="head_box">
+                                    <span>主播电台</span>
+                                    <div></div>
+                                </div>
+                                <div class="content_box1">
+                                    <div class="row">
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                            </div>
+                                            <span>歌名</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                            </div>
+                                            <span>歌名</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                            </div>
+                                            <span>歌名</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                            </div>
+                                            <span>歌名</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                            </div>
+                                            <span>歌名</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                            </div>
+                                            <span>歌名</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--歌单-->
+                    <div class="song_sheet">
+                        <div class="song_sheet_box">
+                            <div class="song_sheet_box_head">
+                                <img src="image/user.jpg">
+                                <div>
+                                    <h3>精彩歌单</h3>
+                                    <p>【把故事藏在歌声里】</p>
+                                    <span>想讲一个忧伤故事给你听</span>
+                                </div>
+                            </div>
+                            <div class="song_sheet_box_all_the_song">
+                                <div class="left">
+                                    <div>
+                                        <span>全部歌单</span>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <span>欧美</span>
+                                    <span>电子</span>
+                                    <span>轻音乐</span>
+                                </div>
+                            </div>
+                            <div class="song_sheet_box_content">
+                                <div>
+                                    <div>
+                                        <img src="image/user.jpg">
+                                        <span>195万</span>
+                                        <span>清远吴彦祖</span>
+                                    </div>
+                                    <span>电音就是电音电音就是电音电音就是电音电音就是</span>
+                                </div>
+                                <div>
+                                    <div>
+                                        <img src="image/user.jpg">
+                                        <span>195万</span>
+                                        <span>清远吴彦祖</span>
+                                    </div>
+                                    <span>电音就是电音</span>
+                                </div>
+                                <div>
+                                    <div>
+                                        <img src="image/user.jpg">
+                                        <span>195万</span>
+                                        <span>清远吴彦祖</span>
+                                    </div>
+                                    <span>电音就是电音</span>
+                                </div>
+                                <div>
+                                    <div>
+                                        <img src="image/user.jpg">
+                                        <span>195万</span>
+                                        <span>清远吴彦祖</span>
+                                    </div>
+                                    <span>电音就是电音</span>
+                                </div>
+                                <div>
+                                    <div>
+                                        <img src="image/user.jpg">
+                                        <span>195万</span>
+                                        <span>清远吴彦祖</span>
+                                    </div>
+                                    <span>电音就是电音</span>
+                                </div>
+                                <div>
+                                    <div>
+                                        <img src="image/user.jpg">
+                                        <span>195万</span>
+                                        <span>清远吴彦祖</span>
+                                    </div>
+                                    <span>电音就是电音</span>
+                                </div>
+                                <div>
+                                    <div>
+                                        <img src="image/user.jpg">
+                                        <span>195万</span>
+                                        <span>清远吴彦祖</span>
+                                    </div>
+                                    <span>电音就是电音</span>
+                                </div>
+                                <div>
+                                    <div>
+                                        <img src="image/user.jpg">
+                                        <span>195万</span>
+                                        <span>清远吴彦祖</span>
+                                    </div>
+                                    <span>电音就是电音</span>
+                                </div>
+                                <div>
+                                    <div>
+                                        <img src="image/user.jpg">
+                                        <span>195万</span>
+                                        <span>清远吴彦祖</span>
+                                    </div>
+                                    <span>电音就是电音</span>
+                                </div>
+                                <div>
+                                    <div>
+                                        <img src="image/user.jpg">
+                                        <span>195万</span>
+                                        <span>清远吴彦祖</span>
+                                    </div>
+                                    <span>电音就是电音电音就是电音电音就是电音电音就是电音</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <!--主播电台-->
+                    <div class="Anchor_station">
+                        <div class="Anchor_station_box">
+                            <!--横幅 轮播图-->
+                            <div class="banner">
+                                <div class="pic">
+                                    <div>
+                                        <img src="image/banner-1.jpg">
+                                    </div>
+                                    <div>
+                                        <img src="image/banner-2.jpg">
+                                    </div>
+                                    <div>
+                                        <img src="image/banner-3.jpg">
+                                    </div>
+                                    <div>
+                                        <img src="image/banner-4.jpg">
+                                    </div>
+                                    <div>
+                                        <img src="image/banner-5.jpg">
+                                    </div>
+                                </div>
+                                <div class="count">
+                                    <ul>
+                                        <li class="current"></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--电台分类-->
+                            <div class="Anchor_station_classification">
+                                <div class="left">电台分类</div>
+                                <div class="right">电台排行</div>
+                            </div>
+                            <!--电台个性推荐-->
+                            <div class="Anchor_station_recommend_radio Anchor_station_box_box
+                            recommend_box">
+                                <div class="head_box">
+                                    <span>电台个性推荐</span>
+                                </div>
+                                <div class="content_box1">
+                                    <div class="row">
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--有声书-->
+                            <div class="Anchor_station_talking_book Anchor_station_box_box
+                             recommend_box">
+                                <div class="head_box">
+                                    <span>有声书</span>
+                                    <div></div>
+                                </div>
+                                <div class="content_box1">
+                                    <div class="row">
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--知识技能-->
+                            <div class="Anchor_station_knowledge_skill Anchor_station_box_box
+                             recommend_box">
+                                <div class="head_box">
+                                    <span>知识技能</span>
+                                    <div></div>
+                                </div>
+                                <div class="content_box1">
+                                    <div class="row">
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--商业财经-->
+                            <div class="Anchor_station_knowledge_skill Anchor_station_box_box
+                             recommend_box">
+                                <div class="head_box">
+                                    <span>商业财经</span>
+                                    <div></div>
+                                </div>
+                                <div class="content_box1">
+                                    <div class="row">
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--人文历史-->
+                            <div class="Anchor_station_knowledge_skill Anchor_station_box_box
+                             recommend_box">
+                                <div class="head_box">
+                                    <span>人文历史</span>
+                                    <div></div>
+                                </div>
+                                <div class="content_box1">
+                                    <div class="row">
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--外语世界-->
+                            <div class="Anchor_station_knowledge_skill Anchor_station_box_box
+                             recommend_box">
+                                <div class="head_box">
+                                    <span>外语世界</span>
+                                    <div></div>
+                                </div>
+                                <div class="content_box1">
+                                    <div class="row">
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--亲子宝贝-->
+                            <div class="Anchor_station_knowledge_skill Anchor_station_box_box
+                             recommend_box">
+                                <div class="head_box">
+                                    <span>亲子宝贝</span>
+                                    <div></div>
+                                </div>
+                                <div class="content_box1">
+                                    <div class="row">
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--创作|翻唱-->
+                            <div class="Anchor_station_knowledge_skill Anchor_station_box_box
+                             recommend_box">
+                                <div class="head_box">
+                                    <span>创作翻唱</span>
+                                    <div></div>
+                                </div>
+                                <div class="content_box1">
+                                    <div class="row">
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--音乐故事-->
+                            <div class="Anchor_station_knowledge_skill Anchor_station_box_box
+                             recommend_box">
+                                <div class="head_box">
+                                    <span>音乐故事</span>
+                                    <div></div>
+                                </div>
+                                <div class="content_box1">
+                                    <div class="row">
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--3D|电子-->
+                            <div class="Anchor_station_knowledge_skill Anchor_station_box_box
+                             recommend_box">
+                                <div class="head_box">
+                                    <span>3D电子</span>
+                                    <div></div>
+                                </div>
+                                <div class="content_box1">
+                                    <div class="row">
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--情感调频-->
+                            <div class="Anchor_station_knowledge_skill Anchor_station_box_box
+                             recommend_box">
+                                <div class="head_box">
+                                    <span>情感调频</span>
+                                    <div></div>
+                                </div>
+                                <div class="content_box1">
+                                    <div class="row">
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--美文读物-->
+                            <div class="Anchor_station_knowledge_skill Anchor_station_box_box
+                             recommend_box">
+                                <div class="head_box">
+                                    <span>美文读物</span>
+                                    <div></div>
+                                </div>
+                                <div class="content_box1">
+                                    <div class="row">
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--脱口秀-->
+                            <div class="Anchor_station_knowledge_skill Anchor_station_box_box
+                             recommend_box">
+                                <div class="head_box">
+                                    <span>脱口秀</span>
+                                    <div></div>
+                                </div>
+                                <div class="content_box1">
+                                    <div class="row">
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--广播剧-->
+                            <div class="Anchor_station_knowledge_skill Anchor_station_box_box
+                             recommend_box">
+                                <div class="head_box">
+                                    <span>广播剧</span>
+                                    <div></div>
+                                </div>
+                                <div class="content_box1">
+                                    <div class="row">
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--二次元-->
+                            <div class="Anchor_station_knowledge_skill Anchor_station_box_box
+                             recommend_box">
+                                <div class="head_box">
+                                    <span>二次元</span>
+                                    <div></div>
+                                </div>
+                                <div class="content_box1">
+                                    <div class="row">
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--娱乐|影视-->
+                            <div class="Anchor_station_knowledge_skill Anchor_station_box_box
+                             recommend_box">
+                                <div class="head_box">
+                                    <span>娱乐|影视</span>
+                                    <div></div>
+                                </div>
+                                <div class="content_box1">
+                                    <div class="row">
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--科技科学-->
+                            <div class="Anchor_station_Science_and_technology Anchor_station_box_box
+                             recommend_box">
+                                <div class="head_box">
+                                    <span>科技科学</span>
+                                    <div></div>
+                                </div>
+                                <div class="content_box1">
+                                    <div class="row">
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--校园|教育-->
+                            <div class="Anchor_station_campus_education Anchor_station_box_box
+                             recommend_box">
+                                <div class="head_box">
+                                    <span>校园教育</span>
+                                    <div></div>
+                                </div>
+                                <div class="content_box1">
+                                    <div class="row">
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--旅游|城市-->
+                            <div class="Anchor_station_tourist_city Anchor_station_box_box
+                             recommend_box">
+                                <div class="head_box">
+                                    <span>旅游|城市</span>
+                                    <div></div>
+                                </div>
+                                <div class="content_box1">
+                                    <div class="row">
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="image/user.jpg">
+                                                <span>清远吴彦祖</span>
+                                            </div>
+                                            <span>电台名称</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <!--排行榜-->
+                    <div class="Ranking_List">
+                        <div class="Ranking_List_box">
+                            <div class="Official_list">
+                                <h3>官方榜</h3>
+                                <div>
+                                    <img src="image/user.jpg">
+                                    <div>
+                                        <span>1.<strong>歌名</strong>-<strong>歌手</strong></span>
+                                        <span>2.<strong>歌名</strong>-<strong>歌手</strong></span>
+                                        <span>3.<strong>歌名</strong>-<strong>歌手</strong></span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <img src="image/user.jpg">
+                                    <div>
+                                        <span>1.<strong>歌名</strong>-<strong>歌手</strong></span>
+                                        <span>2.<strong>歌名</strong>-<strong>歌手</strong></span>
+                                        <span>3.<strong>歌名</strong>-<strong>歌手</strong></span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <img src="image/user.jpg">
+                                    <div>
+                                        <span>1.<strong>歌名</strong>-<strong>歌手</strong></span>
+                                        <span>2.<strong>歌名</strong>-<strong>歌手</strong></span>
+                                        <span>3.<strong>歌名</strong>-<strong>歌手</strong></span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <img src="image/user.jpg">
+                                    <div>
+                                        <span>1.<strong>歌名</strong>-<strong>歌手</strong></span>
+                                        <span>2.<strong>歌名</strong>-<strong>歌手</strong></span>
+                                        <span>3.<strong>歌名</strong>-<strong>歌手</strong></span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <img src="image/user.jpg">
+                                    <div>
+                                        <span>1.<strong>歌名</strong>-<strong>歌手</strong></span>
+                                        <span>2.<strong>歌名</strong>-<strong>歌手</strong></span>
+                                        <span>3.<strong>歌名</strong>-<strong>歌手</strong></span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <img src="image/user.jpg">
+                                    <div>
+                                        <span>1.<strong>歌名</strong>-<strong>歌手</strong></span>
+                                        <span>2.<strong>歌名</strong>-<strong>歌手</strong></span>
+                                        <span>3.<strong>歌名</strong>-<strong>歌手</strong></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Global_standings">
+                                <h3>全球榜</h3>
+                                <div class="Global_box">
+                                    <div>
+                                        <div>
+                                            <img src="image/user.jpg">
+                                        </div>
+                                        <span>新歌榜</span>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <img src="image/user.jpg">
+                                        </div>
+                                        <span>新歌榜</span>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <img src="image/user.jpg">
+                                        </div>
+                                        <span>新歌榜</span>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <img src="image/user.jpg">
+                                        </div>
+                                        <span>新歌榜</span>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <img src="image/user.jpg">
+                                        </div>
+                                        <span>新歌榜</span>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <img src="image/user.jpg">
+                                        </div>
+                                        <span>新歌榜</span>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <img src="image/user.jpg">
+                                        </div>
+                                        <span>新歌榜</span>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <img src="image/user.jpg">
+                                        </div>
+                                        <span>新歌榜</span>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <img src="image/user.jpg">
+                                        </div>
+                                        <span>新歌榜</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="User_list"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--朋友-->
+            <div class="friend_warp">
+                <span>暂未开发</span>
+            </div>
+        </div>
+    </div>
+    <!--搜索-->
+    <div class="search">
+        <div class="search_head">
+            <div>
+                <span class="back">返回</span>
+            </div>
+            <input type="text" placeholder="搜索音乐、歌手、歌词、用户">
+            <input type="submit" value="搜索">
+        </div>
+        <div class="Singer_category">
+            <span>歌手分类</span>
+        </div>
+        <div class="Hot_search">
+            <h4>热门搜索</h4>
+            <span>越过山丘</span>
+            <span>越过山丘山丘</span>
+            <span>越过山丘</span>
+            <span>越过山丘</span>
+            <span>越过山丘</span>
+            <span>越过山丘</span>
+            <span>越过山丘</span>
+            <span>越过山丘</span>
+            <span>越过山丘</span>
+            <span>越过山丘</span>
+        </div>
+        <div class="history_search">
+            <p><span>越过山丘</span><strong>×</strong></p>
+            <p><span>越过山丘</span><strong>×</strong></p>
+        </div>
+        <div class="search_result">
+            <div class="search_result_header">
+                <ul>
+                    <li class="current">单曲</li>
+                    <li>歌手</li>
+                    <li>专辑</li>
+                    <li>歌单</li>
+                    <li>MV</li>
+                </ul>
+            </div>
+            <div class="search_result_content">
+                <div class="search_result_container">
+                    <div class="search_result_box">
+                        <ul>
+                            <li><p><span>我想起你了</span><br><span>薛之谦-<strong>意外</strong></span></p></li>
+                        </ul>
+                    </div>
+                    <div class="search_result_box"></div>
+                    <div class="search_result_box"></div>
+                    <div class="search_result_box"></div>
+                    <div class="search_result_box"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--搜索结果-->
+    <!--播放列表-->
+    <!--音乐播放界面-->
+    <div class="music_play">
+        <div class="pop"></div>
+        <div class="music_play_head">
+            <div class="back">
+                <span>返回</span>
+            </div>
+            <div class="Song_material">
+                <span>歌名</span>
+                <span>歌手</span>
+            </div>
+            <div class="share">
+                分享
+            </div>
+        </div>
+        <div class="music_play_content">
+            <div class="Phonograph_box">
+                <div class="Phonograph_box_box">
+                    <img class="albumPic" src="image/music.jpg">
+                </div>
+                <!--<div class="live">-->
+                    <!--<div>喜欢</div>-->
+                    <!--<div>下载</div>-->
+                    <!--<div>评论</div>-->
+                    <!--<div>列表</div>-->
+                <!--</div>-->
+            </div>
+            <div class="Lyric_box"></div>
+        </div>
+        <div class="music_play_control">
+            <div class="control_top">
+                <span class="currentTime">00:00</span>
+                <div id="music_progressBar"></div>
+                <span class="endTime">00:00</span>
+            </div>
+            <div class="control_bottom">
+                <div>
+                    <span>单曲循环</span>
+                </div>
+                <div>
+                    <span>上一首</span>
+                </div>
+                <div>
+                    <span>播放</span>
+                </div>
+                <div>
+                    <span>下一首</span>
+                </div>
+                <div>
+                    <span>列表</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--底部 音乐控制-->
+    <div class="bottom bottom_control">
+        <div class="left">
+            <img src="image/user.jpg">
+            <p>
+                <span>歌名歌名歌名歌名歌名歌名歌名歌名歌名歌名歌名</span>
+                <br>
+                <span>歌手</span>
+            </p>
+        </div>
+        <div class="right">
+            <div>播放</div>
+            <div>列表</div>
+        </div>
+    </div>
+</div>
+<script src="js/script.js"></script>
+<script src="js/Page_Jump.js"></script>
+<script src="js/musica_play.js"></script>
+</body>
+</html>

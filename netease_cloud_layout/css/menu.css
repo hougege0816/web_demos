@@ -1,0 +1,135 @@
+.menu{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.5);
+    z-index:12;
+    visibility: hidden;
+}
+.menu_container{
+    margin-left:-100%;
+    width:80%;
+    height:100%;
+    background:#fff;
+    overflow: hidden;
+    transition: all .5s;
+}
+.menu_right{
+    position: absolute;
+    top:0;
+    right:0;
+    width:20%;
+    height:100%;
+}
+.menu_header{
+    position: relative;
+    width:100%;
+    height:20%;
+    background: #5490ff;
+}
+.menu_nav{
+    width:100%;
+    height:72%;
+    background:red;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.menu_nav_box{
+    width:100%;
+    height:100%;
+    background:#fff;
+}
+.menu_bottom{
+    width:100%;
+    height:8%;
+    box-shadow: 0 0 1px 1px #ccc;
+}.menu_nav_box ul{
+     width:100%;
+     height:100%;
+ }
+.menu_nav_box li{
+    display: flex;
+    align-items: center;
+    padding-left: 4%;
+    width:96%;
+    height:6vh;
+    background:#fff;
+    cursor: pointer;
+    font-size:12px;
+}
+.menu_nav_box li:hover{
+    background: #5490ff;
+}
+.menu_bottom ul{
+    width:100%;
+    height:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu_bottom ul li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:25%;
+    height:100%;
+    font-size:14px;
+}
+.menu_bottom ul li:hover{
+    background: #5490ff;
+}
+.menu_header div{
+    position: absolute;
+    left:0;
+    width:97%;
+    padding-left:3%;
+}
+.menu_header div:nth-child(1){
+    bottom: 35%;
+    height:60px;
+}
+.menu_header div img{
+    width:60px;
+    height:60px;
+    border-radius: 50%;
+}
+.menu_header div:nth-last-child(1){
+    bottom:0;
+    height:35%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.menu_header div span{
+    float: left;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+.menu_header div .user-name{
+    font-size: 16px;
+    width:60%;
+}
+.menu_header div .grade{
+    font-size: 10px;
+    margin-left:2%;
+    width:30px;
+    height: 15px;
+    box-shadow: 0 0 0 1px #fff;
+    padding-top: 1px;
+    border-radius: 10px;
+    justify-content: center;
+}
+.menu_header div .sign{
+    font-size: 13px;
+    float: right;
+    margin-right:3%;
+    width:42px;
+    height: 17px;
+    box-shadow: 0 0 0 1px #fff;
+    border-radius: 20px;
+    padding:5px 1% .5% 1%;
+    justify-content: center;
+}
