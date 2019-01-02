@@ -14,7 +14,7 @@
 
 - [是男人就过100关](https://gd4ark.github.io/web_demos/100_of_game/)
 
-
+- [见缝插针](https://gd4ark.github.io/web_demos/core_ball/)（移动端模式下才能正常运行）
 
 动画类：
 
