@@ -48,6 +48,7 @@
 网站类：
 
 - [人工智能科普网站](https://gd4ark.github.io/web_demos/AI_info_site/)
+- PHP图书管理系统（book_system，需要服务器环境）
 
 
 
