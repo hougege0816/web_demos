@@ -37,7 +37,10 @@
 
 - [幻灯片切换（可拖拽）](https://gd4ark.github.io/web_demos/slide_toggle/)
 
-
+- [粒子发散动画](https://gd4ark.github.io/web_demos/particle_divergence/)
+- [虚幻条线背景动画](https://gd4ark.github.io/web_demos/canvas_illusory/)
+- [曲线动画特效](https://gd4ark.github.io/web_demos/canvas_curve/)
+- [拖动鼠标生成粒子动画](https://gd4ark.github.io/web_demos/canvas_ball/)
 
 工具类：
 
