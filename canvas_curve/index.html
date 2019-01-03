@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>canvas</title>
+    <style>
+        *{  margin: 0;  padding: 0;}
+        html,body{ overflow: hidden;}
+        .control{
+            position:absolute;
+            top:0;
+            left:0;
+            display: flex;
+            align-items:center;
+            justify-content:center;
+            flex-wrap: wrap;
+            width:30vh;
+            height:40vh;
+            background:transparent;
+            color: white;
+        }
+        .control > div{
+            width:100%;
+            height:20%;
+            display: flex;
+            align-items:center;
+            justify-content:space-around;
+        }
+        .control input[type=button]{
+            width:40%;
+            height:50%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="control">
+        <div>数量：<input type="range" id="num" value="20" min="4" max="300"></div>
+        <div>尺寸：<input type="range" id="size" value="20" min="2" max="100"></div>
+        <div>速度：<input type="range" id="speed" value="5" min="1" max="20" ></div>
+        <div>延迟：<input type="range" id="delay" value="8" min="1" max="50"></div>
+        <div><input type="button" id="btn" value="Go"></div>
+    </div>
+
+    <script>
+        (function () {
+
+            var can = document.createElement('canvas'),
+                ctx = can.getContext('2d'),
+                balls = [],
+                config = [];
+
+            document.body.appendChild(can);
+
+            resize();
+
+            window.resize = resize();
+
+            window.requestAnimationFrame(update);
+
+            function createBall(angle){
+                var origin = [
+                    can.width/2,
+                    can.height/2
+                ];
+                balls.push(new Ball({
+                    angle : angle,
+                    pos : [origin[0],origin[1]],
+                    size : config.size,
+                    speed : config.speed
+                }));
+            }
+
+            var tick = 0;
+
+            function update(){
+                balls.forEach(function(el){
+                    el.move();
+                    el.draw(ctx);
+                });
+                if (config.toCreate){
+                    if (!(tick%(config.delay))){
+                        createBall((180/config.num)*config.toCreate);
+                        config.toCreate--;
+                    }
+                }
+                fade();
+                tick++;
+                window.requestAnimationFrame(update);
+            }
+
+
+            function fade(){
+                ctx.beginPath();
+                ctx.fillStyle = 'rgba(0,0,0,.03)';
+                ctx.fillRect(0,0,can.width,can.height);
+            }
+
+            function clear(){
+                ctx.beginPath();
+                ctx.fillStyle = 'rgba(0,0,0,1)';
+                ctx.fillRect(0,0,can.width,can.height);
+                balls.length = 0;
+            }
+
+            function Ball(options){
+                this.angle = 0;
+                this.curve = 0;
+                this.speed = 0;
+                this.size = 0;
+                this.hue = 0;
+                this.pos = [0,1];
+                this.tick = 0;
+                this.color = 0;
+
+                for (var i in options){
+                    this[i] = options[i];
+                }
+
+                this.move = function(){
+                    this.angle += this.curve;
+                    var radians = this.angle*Math.PI/180;
+                    this.pos[0] += Math.cos(radians)*this.speed*Math.cos(this.tick/50);
+                    this.pos[1] += Math.sin(radians)*this.speed*Math.cos(this.tick/50);
+                    this.hue++;
+                    this.color = 'hsl('+ this.hue +',80%,65%)';
+                    this.tick++;
+                };
+                this.draw = function(ctx){
+                    ctx.beginPath();
+                    ctx.strokeStyle = this.color;
+                    ctx.arc(this.pos[0],this.pos[1],this.size,0,Math.PI*2);
+                    ctx.stroke();
+                }
+            }
+
+
+            function start(){
+                clear();
+                config.toCreate = config.num;
+            }
+
+            function resize(){
+                can.width = window.innerWidth;
+                can.height = window.innerHeight;
+            }
+
+            function initSetting(num,size,speed,delay){
+                config.num = parseFloat(num);
+                config.size = parseFloat(size);
+                config.speed = parseFloat(speed);
+                config.delay = parseFloat(delay);
+                start();
+            }
+
+            var btn = document.getElementById('btn'),
+                num = document.getElementById('num'),
+                size = document.getElementById('size'),
+                speed = document.getElementById('speed'),
+                delay = document.getElementById('delay');
+
+
+            btn.addEventListener('click',function(){
+                initSetting(num.value,size.value,speed.value,delay.value);
+                clear();
+                start();
+            });
+
+            initSetting(num.value,size.value,speed.value,delay.value);
+
+        })();
+    </script>
+</body>
+</html>

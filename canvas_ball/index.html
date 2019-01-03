@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>canvas小球</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding: 0;
+		}
+		html,body{
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+		}
+		#canvas{
+			background: #333;
+		}
+	</style>
+</head>
+<body>
+
+	<canvas id="canvas">你的浏览器不支持canvas标签，请更换浏览器！！</canvas> 
+
+	<script type="text/javascript">
+
+		var addEvent = function(elem,sEvent,fn){
+			elem.addEventListener ? elem.addEventListener(sEvent,fn,false) : elem.attachEvent('on'+sEvent,fn);
+		};
+
+
+		window.onload = function(){
+
+			var can = document.getElementById('canvas'),
+				cxt = can.getContext('2d'),
+				balls = [],
+				Start = false,
+
+
+				Ball = function(x,y,vx,vy,r,color){
+					this.x = x;
+					this.y = y;
+					this.vx = vx;
+					this.vy = vy;
+					this.r = r;
+					this.color = color;
+
+					this.initX = x;
+					this.initY = y;
+
+					this._maxX = 150 + (Math.random()*100);
+					this._maxY = 150 + (Math.random()*100);
+
+					this._alpha = 1;
+					this.isAlpha = false;
+				};
+
+
+			Ball.prototype = {
+				draw : function(){
+					cxt.beginPath(); 
+					cxt.arc(this.x,this.y,this.r,0,Math.PI*2,false);
+					cxt.fillStyle = `rgba(${this.color['r']},${this.color['g']},${this.color['b']},${this._alpha})`;
+					cxt.fill();
+					if( (Math.abs(this.x-this.initX)>this._maxX || Math.abs(this.y-this.initY)>this._maxY)  ) this._isFadeOut=true;
+
+					if(this._isFadeOut){
+						this._alpha-=0.03; //开始透明
+					}
+					if(this._alpha<0){
+						this.drstroy();
+					}
+				},
+				drstroy : function(){
+					balls.splice(balls.indexOf(this),1);
+				}
+			};
+
+			can.width = window.innerWidth;
+			can.height = window.innerHeight;
+
+			addEvent(document,'mousedown',function(){
+				Start = true;
+			});
+
+
+			addEvent(document,'mousemove',function(e){
+				if (!Start) return;
+				var e = e || window.event,
+					vx = (Math.random()*-6)+3,
+					vy = (Math.random()*-6)+3,
+					r = (Math.random()*5)+10,
+					color = { 'r':Math.round(Math.random()*256),'g':Math.round(Math.random()*256),'b':Math.round(Math.random()*256) };
+
+				vx+=vx < 0 ? -1 : 1;
+				vy+=vy < 0 ? -1 : 1;
+
+				var ball = new Ball(e.clientX,e.clientY,vx/2,vy/2,r,color);
+				ball.draw();
+				balls.push(ball);
+			});
+
+
+			addEvent(document,'mouseup',function(){
+				Start = false;
+			});
+
+
+			setInterval(function(){
+				cxt.clearRect(0,0,can.width,can.height);
+				for (var i = 0,length=balls.length; i < length; i++&&(length=balls.length)) {
+					if (!balls[i]) return;
+
+					balls[i].x += balls[i].vx;
+					balls[i].y += balls[i].vy;
+
+					balls[i].draw();
+				}
+			},1000/60);
+
+
+		}
+	</script>
+</body>
+</html>

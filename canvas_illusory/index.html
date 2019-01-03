@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>canvas</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width:100%;
+            height:100%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+        (function(){
+
+            var c = document.getElementById('canvas'),
+                w = c.width = window.innerWidth,
+                h = c.height = window.innerHeight,
+                ctx = c.getContext('2d'),
+
+                count = (w*h/3000)|100,
+                speed = 4,
+                range = 80,
+                lineAlpha = .05,
+
+                particles = [],
+                huePart = 360/count;
+
+            window.addEventListener('resize',resize);
+
+            for (var i=0;i<count;i++){
+                particles.push(new Particle((huePart*i)|0));
+            }
+
+            function resize(){
+                w = c.width = window.innerWidth;
+                h = c.height = window.innerHeight;
+            }
+
+            function Particle(hue){
+                this.x = Math.random()*w;
+                this.y = Math.random()*h;
+
+                this.vx = (Math.random()-.5)*speed;
+                this.vy = (Math.random()-.5)*speed;
+
+                this.hue = hue;
+            }
+
+            Particle.prototype.update = function(){
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0 || this.x > w) this.vx *= -1;
+                if (this.y < 0 || this.y > h) this.vy *= -1;
+
+            };
+
+            function checkDist(a,b,dist){
+                var x = a.x - b.x,
+                    y = a.y - b.y;
+                return x*x + y*y <= dist*dist;
+            }
+
+            (function update(){
+                ctx.fillStyle = 'rgba(0,0,0,.05)';
+                ctx.fillRect(0,0,w,h);
+
+                for (var i=0;i<particles.length;i++){
+                    var p1 = particles[i];
+                    p1.update();
+
+                    for (var j=i+1;j<particles.length;j++){
+                        var p2 = particles[j];
+                        if (checkDist(p1,p2,range)){
+                            var _hue = ((p1.hue + p2.hue +3)/2)%360;
+                            ctx.strokeStyle = 'hsla('+ _hue +',80%,50%,'+ lineAlpha +')';
+                            ctx.beginPath();
+                            ctx.moveTo(p1.x,p1.y);
+                            ctx.lineTo(p2.x,p2.y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+
+                window.requestAnimationFrame(update);
+            })();
+
+        })();
+    </script>
+</body>
+</html>

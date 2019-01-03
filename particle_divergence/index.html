@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width:100%;
+            height:100%;
+            overflow: hidden;
+        }
+        canvas{
+            background:rgba(0,0,0,.9);
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<script>
+    window.addEventListener('load',function(){
+        let can = document.getElementById('canvas'),
+            cxt = can.getContext('2d'),
+            balls = [];
+        can.width = document.body.offsetWidth;
+        can.height = document.body.offsetHeight;
+
+        let Ball = function(){
+            this.x = can.width/2;
+            this.y = can.height/2;
+            this.vx = Math.random()*-4+2;
+            this.vy = Math.random()*-4+2;
+            this.r = 0;
+            this.color = `rgba(${~~(Math.random()*256)},${~~(Math.random()*256)},${~~(Math.random()*256)},1)`;
+            this.update = function() {
+                cxt.beginPath();
+                cxt.fillStyle = this.color;
+                cxt.arc(this.x,this.y,this.r,0,Math.PI*2,false);
+                cxt.fill();
+            }
+        };
+        for (let i=0;i<Math.random()*10000;i++){
+            balls.push(new Ball());
+        }
+        !function update(){
+            cxt.clearRect(0,0,can.width,can.height);
+            balls.forEach((el,index)=>{
+                el.x += el.vx;
+                el.y += el.vy;
+                if (el.x<0 || el.y<0 || el.x>can.width || el.y>can.height) balls.splice(index,1);
+                if (el.r<3) el.r+=Math.random()*0.02;
+                el.update();
+            });
+            balls.push(new Ball());
+            console.log(balls.length);
+            requestAnimationFrame(update);
+        }();
+    });
+</script>
+</body>
+</html>
